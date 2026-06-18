@@ -1,27 +1,26 @@
-import { ScrollView, StyleSheet, Text, useWindowDimensions, View } from 'react-native';
-import { Stack } from 'expo-router';
+import { Pressable, ScrollView, StyleSheet, Text, useWindowDimensions, View } from 'react-native';
+import { Stack, useRouter } from 'expo-router';
 import { theme } from '@dinasour/ui';
 import { DINOSAURS } from '@dinasour/content';
 import type { TopicEntry } from '@dinasour/content';
+import { eraColor } from '../utils/eraColor';
 
-const ERA_COLORS: Record<string, string> = {
-  Jurassic: '#27AE60',
-  Cretaceous: '#D35400',
-  Triassic: '#8E44AD',
-};
-
-function eraColor(category: string): string {
-  return ERA_COLORS[category] ?? theme.colors.primary;
-}
-
-function DinoCard({ entry, width }: { entry: TopicEntry; width: number }) {
+function DinoCard({
+  entry,
+  width,
+  onPress,
+}: {
+  entry: TopicEntry;
+  width: number;
+  onPress: () => void;
+}) {
   const color = eraColor(entry.category);
   return (
-    <View
-      style={[styles.card, { width }]}
-      accessible
+    <Pressable
+      onPress={onPress}
+      style={({ pressed }) => [styles.card, { width }, pressed && styles.cardPressed]}
       accessibilityRole="button"
-      accessibilityLabel={`${entry.name}, ${entry.category} period`}
+      accessibilityLabel={`${entry.name}, ${entry.category} period. Tap to learn more.`}
     >
       <View style={[styles.imagePlaceholder, { backgroundColor: color }]} />
       <View style={styles.cardInfo}>
@@ -35,12 +34,13 @@ function DinoCard({ entry, width }: { entry: TopicEntry; width: number }) {
           <Text style={[styles.eraLabel, { color }]}>{entry.category}</Text>
         </View>
       </View>
-    </View>
+    </Pressable>
   );
 }
 
 export default function HomeScreen() {
   const { width } = useWindowDimensions();
+  const router = useRouter();
   const cardWidth = (width - theme.spacing.lg * 2 - theme.spacing.md) / 2;
 
   return (
@@ -56,7 +56,12 @@ export default function HomeScreen() {
         </Text>
         <View style={styles.grid}>
           {DINOSAURS.map((dino) => (
-            <DinoCard key={dino.id} entry={dino} width={cardWidth} />
+            <DinoCard
+              key={dino.id}
+              entry={dino}
+              width={cardWidth}
+              onPress={() => router.push(`/dino/${dino.id}`)}
+            />
           ))}
         </View>
       </ScrollView>
@@ -89,6 +94,10 @@ const styles = StyleSheet.create({
     backgroundColor: theme.colors.white,
     overflow: 'hidden',
     ...theme.shadow.card,
+  },
+  cardPressed: {
+    opacity: 0.85,
+    transform: [{ scale: 0.97 }],
   },
   imagePlaceholder: {
     height: 100,
