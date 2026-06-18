@@ -1,0 +1,42 @@
+{
+  "expo": {
+    "name": "Dino World",
+    "slug": "dino-app",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "scheme": "dinoworld",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "resizeMode": "contain",
+      "backgroundColor": "#FFFDF5"
+    },
+    "assetBundlePatterns": ["**/*"],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.dinasour.dinoapp"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#FFFDF5"
+      },
+      "package": "com.dinasour.dinoapp"
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "static"
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-splash-screen",
+        {
+          "backgroundColor": "#FFFDF5",
+          "resizeMode": "contain"
+        }
+      ]
+    ],
+    "experiments": {
+      "typedRoutes": true
+    }
+  }
+}

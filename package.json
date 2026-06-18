@@ -1,0 +1,20 @@
+{
+  "name": "dinasour-platform",
+  "private": true,
+  "version": "0.0.0",
+  "engines": {
+    "node": ">=20",
+    "pnpm": ">=9"
+  },
+  "scripts": {
+    "dino": "pnpm --filter dino-app start",
+    "dino:ios": "pnpm --filter dino-app ios",
+    "dino:android": "pnpm --filter dino-app android",
+    "dino:web": "pnpm --filter dino-app web",
+    "website": "pnpm --filter website dev",
+    "build:packages": "pnpm --filter './packages/**' build"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.0"
+  }
+}
