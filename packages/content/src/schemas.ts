@@ -65,6 +65,32 @@ export interface QuizQuestion {
 }
 
 /**
+ * A single named subject within a topic — e.g. one dinosaur species,
+ * one planet, one ocean creature. Generic enough to reuse across any topic.
+ */
+export interface TopicEntry {
+  id: string;
+  name: string;
+  /** Phonetic spelling to guide kids and text-to-speech engines */
+  pronunciation: string;
+  /**
+   * Temporal era for time-based topics (e.g. "Cretaceous", "Jurassic")
+   * or a thematic category for others (e.g. "Rocky Planet", "Deep Sea").
+   * The UI uses this to colour-code and group cards.
+   */
+  category: string;
+  /** 1–2 sentences at a 4–9 year old reading level — engaging, not textbook */
+  kidFact: string;
+  /** Relatable size comparison, e.g. "as long as two school buses" */
+  sizeComparison: string;
+  /**
+   * Logical key used to look up image assets (e.g. "dinosaurs/t-rex").
+   * Rendered as a coloured placeholder box until real assets are added.
+   */
+  imageKey: string;
+}
+
+/**
  * A complete content bundle consumed by a topic app.
  * Define one of these in apps/<topic>/content/ using data specific to that topic.
  */
