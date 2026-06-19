@@ -1,20 +1,37 @@
+import { useCallback } from 'react';
 import { Platform, Pressable, ScrollView, StyleSheet, Text, useWindowDimensions, View } from 'react-native';
-import { Stack, useRouter } from 'expo-router';
+import { Stack, useFocusEffect, useRouter } from 'expo-router';
 import { theme, DinoIllustration } from '@dinasour/ui';
 import { DINOSAURS } from '@dinasour/content';
 import type { TopicEntry } from '@dinasour/content';
 import { eraColor } from '../utils/eraColor';
+import { useProgress } from '../hooks/useProgress';
+import type { QuizResult } from '../hooks/useProgress';
 
 const IS_WEB = Platform.OS === 'web';
 const WEB_CARD_WIDTH = 220;
 
+function ScoreBadge({ result }: { result: QuizResult }) {
+  const isPerfect = result.score === result.total;
+  return (
+    <View
+      style={[styles.badge, { backgroundColor: isPerfect ? '#27AE60' : '#F5A623' }]}
+      accessibilityLabel={`Quiz score: ${result.score} out of ${result.total}`}
+    >
+      <Text style={styles.badgeText}>{result.score}/{result.total}</Text>
+    </View>
+  );
+}
+
 function DinoCard({
   entry,
   width,
+  result,
   onPress,
 }: {
   entry: TopicEntry;
   width: number;
+  result: QuizResult | undefined;
   onPress: () => void;
 }) {
   const color = eraColor(entry.category);
@@ -27,6 +44,11 @@ function DinoCard({
     >
       <View style={[styles.imagePlaceholder, { backgroundColor: color + '18' }]}>
         <DinoIllustration imageKey={entry.imageKey} width={width} height={100} />
+        {result ? (
+          <View style={styles.badgeContainer}>
+            <ScoreBadge result={result} />
+          </View>
+        ) : null}
       </View>
       <View style={styles.cardInfo}>
         <Text style={styles.cardName} numberOfLines={2}>
@@ -43,9 +65,41 @@ function DinoCard({
   );
 }
 
+function ProgressBanner({ completed, total }: { completed: number; total: number }) {
+  if (completed === 0) return null;
+  const allDone = completed === total;
+  return (
+    <View
+      style={[styles.banner, allDone && styles.bannerComplete]}
+      accessible
+      accessibilityRole="text"
+      accessibilityLabel={`You have completed ${completed} out of ${total} quizzes`}
+    >
+      <Text style={styles.bannerText}>
+        {allDone
+          ? 'You completed all quizzes — dino expert!'
+          : `${completed} of ${total} quizzes done`}
+      </Text>
+      <View style={styles.bannerDots}>
+        {DINOSAURS.map((d) => (
+          <View
+            key={d.id}
+            style={[styles.bannerDot, completed > DINOSAURS.indexOf(d) && styles.bannerDotFilled]}
+          />
+        ))}
+      </View>
+    </View>
+  );
+}
+
 export default function HomeScreen() {
   const { width } = useWindowDimensions();
   const router = useRouter();
+  const { progress, load, completedCount } = useProgress();
+
+  // Refresh whenever the home screen comes back into focus
+  useFocusEffect(useCallback(() => { load(); }, [load]));
+
   const cardWidth = IS_WEB
     ? WEB_CARD_WIDTH
     : (width - theme.spacing.lg * 2 - theme.spacing.md) / 2;
@@ -61,6 +115,9 @@ export default function HomeScreen() {
         <Text style={styles.heading} accessibilityRole="header">
           Pick a Dinosaur!
         </Text>
+
+        <ProgressBanner completed={completedCount} total={DINOSAURS.length} />
+
         {IS_WEB ? (
           <ScrollView
             horizontal
@@ -74,6 +131,7 @@ export default function HomeScreen() {
                 key={dino.id}
                 entry={dino}
                 width={WEB_CARD_WIDTH}
+                result={progress[dino.id]}
                 onPress={() => router.push(`/dino/${dino.id}`)}
               />
             ))}
@@ -85,6 +143,7 @@ export default function HomeScreen() {
                 key={dino.id}
                 entry={dino}
                 width={cardWidth}
+                result={progress[dino.id]}
                 onPress={() => router.push(`/dino/${dino.id}`)}
               />
             ))}
@@ -108,14 +167,65 @@ const styles = StyleSheet.create({
     fontSize: theme.typography.headingSize,
     fontWeight: theme.typography.bold,
     color: theme.colors.text,
-    marginBottom: theme.spacing.lg,
+    marginBottom: theme.spacing.md,
   },
+
+  // Progress banner
+  banner: {
+    backgroundColor: theme.colors.surface,
+    borderRadius: theme.borderRadius.lg,
+    padding: theme.spacing.md,
+    marginBottom: theme.spacing.lg,
+    gap: theme.spacing.sm,
+  },
+  bannerComplete: {
+    backgroundColor: '#E8F8EE',
+  },
+  bannerText: {
+    fontSize: theme.typography.captionSize,
+    fontWeight: theme.typography.bold,
+    color: theme.colors.text,
+  },
+  bannerDots: {
+    flexDirection: 'row',
+    gap: theme.spacing.xs,
+  },
+  bannerDot: {
+    width: 10,
+    height: 10,
+    borderRadius: 5,
+    backgroundColor: theme.colors.background,
+    borderWidth: 1.5,
+    borderColor: theme.colors.textMuted,
+  },
+  bannerDotFilled: {
+    backgroundColor: theme.colors.primary,
+    borderColor: theme.colors.primary,
+  },
+
+  // Score badge overlaid on the card image
+  badgeContainer: {
+    position: 'absolute',
+    top: theme.spacing.xs,
+    right: theme.spacing.xs,
+  },
+  badge: {
+    paddingHorizontal: theme.spacing.sm,
+    paddingVertical: 2,
+    borderRadius: theme.borderRadius.full,
+  },
+  badgeText: {
+    fontSize: 12,
+    fontWeight: theme.typography.bold,
+    color: theme.colors.white,
+  },
+
+  // Layout
   grid: {
     flexDirection: 'row',
     flexWrap: 'wrap',
     gap: theme.spacing.md,
   },
-  // Web-only horizontal carousel — extends to screen edges by cancelling container padding
   horizontalScroller: {
     marginHorizontal: -theme.spacing.lg,
   },
@@ -124,6 +234,8 @@ const styles = StyleSheet.create({
     paddingBottom: theme.spacing.sm,
     gap: theme.spacing.md,
   },
+
+  // Cards
   card: {
     borderRadius: theme.borderRadius.lg,
     backgroundColor: theme.colors.white,

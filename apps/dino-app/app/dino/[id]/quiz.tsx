@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { Stack, useLocalSearchParams, useRouter } from 'expo-router';
 import { theme } from '@dinasour/ui';
@@ -6,6 +6,7 @@ import { DINOSAURS, DINO_QUIZ_MAP } from '@dinasour/content';
 import type { QuizOption, QuizQuestion } from '@dinasour/content';
 import { eraColor } from '../../../utils/eraColor';
 import { useSpeech } from '../../../hooks/useSpeech';
+import { useProgress } from '../../../hooks/useProgress';
 
 const OPTION_LETTERS = ['A', 'B', 'C'];
 
@@ -136,6 +137,7 @@ export default function QuizScreen() {
   const { id } = useLocalSearchParams<{ id: string }>();
   const router = useRouter();
   const { speak, stop } = useSpeech();
+  const { saveResult } = useProgress();
 
   const dino = DINOSAURS.find((d) => d.id === id);
   const questions: QuizQuestion[] = DINO_QUIZ_MAP[id ?? ''] ?? [];
@@ -175,9 +177,10 @@ export default function QuizScreen() {
     });
   }, [selected]);
 
-  // Speak results when the quiz is finished
+  // Save result and speak congratulations when the quiz is finished
   useEffect(() => {
-    if (!done) return;
+    if (!done || !id) return;
+    saveResult(id, score, total);
     speak(scoreMessage(score, total), { pitch: score === total ? 1.3 : 1.0 });
   }, [done]);
 
