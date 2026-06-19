@@ -1,12 +1,17 @@
+import { useState } from 'react';
 import { Pressable, ScrollView, StyleSheet, Text, useWindowDimensions, View } from 'react-native';
 import { Stack, useLocalSearchParams, useRouter } from 'expo-router';
 import { theme, DinoIllustration } from '@dinasour/ui';
 import { DINOSAURS } from '@dinasour/content';
 import { eraColor } from '../../../utils/eraColor';
+import { useSpeech } from '../../../hooks/useSpeech';
 
 export default function DinoDetailScreen() {
   const { id } = useLocalSearchParams<{ id: string }>();
   const router = useRouter();
+  const { speak, stop } = useSpeech();
+  const [isSpeaking, setIsSpeaking] = useState(false);
+
   const dino = DINOSAURS.find((d) => d.id === id);
 
   if (!dino) {
@@ -19,6 +24,23 @@ export default function DinoDetailScreen() {
 
   const color = eraColor(dino.category);
   const { width: screenWidth } = useWindowDimensions();
+
+  function handleListen() {
+    if (isSpeaking) {
+      stop();
+      setIsSpeaking(false);
+    } else {
+      setIsSpeaking(true);
+      speak(
+        `${dino.name}. ${dino.kidFact}. How big was it? ${dino.sizeComparison}.`,
+        {
+          onDone: () => setIsSpeaking(false),
+          onStopped: () => setIsSpeaking(false),
+          onError: () => setIsSpeaking(false),
+        },
+      );
+    }
+  }
 
   return (
     <>
@@ -52,7 +74,24 @@ export default function DinoDetailScreen() {
 
         {/* Fact */}
         <View style={styles.section}>
-          <Text style={styles.sectionHeading}>Did you know?</Text>
+          <View style={styles.sectionHeader}>
+            <Text style={styles.sectionHeading}>Did you know?</Text>
+            <Pressable
+              onPress={handleListen}
+              style={({ pressed }) => [
+                styles.listenBtn,
+                { borderColor: color },
+                isSpeaking && { backgroundColor: color },
+                pressed && styles.listenBtnPressed,
+              ]}
+              accessibilityRole="button"
+              accessibilityLabel={isSpeaking ? 'Stop reading aloud' : 'Read this fact aloud'}
+            >
+              <Text style={[styles.listenBtnText, { color }, isSpeaking && styles.listenBtnTextActive]}>
+                {isSpeaking ? 'Stop' : 'Listen'}
+              </Text>
+            </Pressable>
+          </View>
           <Text style={styles.factText}>{dino.kidFact}</Text>
         </View>
 
@@ -132,10 +171,34 @@ const styles = StyleSheet.create({
     padding: theme.spacing.lg,
     gap: theme.spacing.sm,
   },
+  sectionHeader: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+  },
   sectionHeading: {
     fontSize: theme.typography.subheadingSize,
     fontWeight: theme.typography.bold,
     color: theme.colors.text,
+  },
+  listenBtn: {
+    minHeight: theme.touchTarget.min,
+    paddingHorizontal: theme.spacing.md,
+    borderRadius: theme.borderRadius.full,
+    borderWidth: 2,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  listenBtnPressed: {
+    opacity: 0.75,
+  },
+  listenBtnText: {
+    fontSize: theme.typography.captionSize,
+    fontWeight: theme.typography.bold,
+    letterSpacing: 0.3,
+  },
+  listenBtnTextActive: {
+    color: theme.colors.white,
   },
   factText: {
     fontSize: theme.typography.bodySize,

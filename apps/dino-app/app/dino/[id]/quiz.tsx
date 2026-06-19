@@ -1,10 +1,11 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { Stack, useLocalSearchParams, useRouter } from 'expo-router';
 import { theme } from '@dinasour/ui';
 import { DINOSAURS, DINO_QUIZ_MAP } from '@dinasour/content';
 import type { QuizOption, QuizQuestion } from '@dinasour/content';
 import { eraColor } from '../../../utils/eraColor';
+import { useSpeech } from '../../../hooks/useSpeech';
 
 const OPTION_LETTERS = ['A', 'B', 'C'];
 
@@ -134,6 +135,7 @@ function ResultsScreen({
 export default function QuizScreen() {
   const { id } = useLocalSearchParams<{ id: string }>();
   const router = useRouter();
+  const { speak, stop } = useSpeech();
 
   const dino = DINOSAURS.find((d) => d.id === id);
   const questions: QuizQuestion[] = DINO_QUIZ_MAP[id ?? ''] ?? [];
@@ -147,8 +149,41 @@ export default function QuizScreen() {
   const dinoName = dino?.name ?? 'Dinosaur';
   const total = questions.length;
 
+  // Auto-read each question when it appears
+  useEffect(() => {
+    if (done || questions.length === 0) return;
+    const timer = setTimeout(() => {
+      speak(questions[currentIndex].narration.script);
+    }, 350);
+    return () => clearTimeout(timer);
+  }, [currentIndex, done]);
+
+  // Speak verbal feedback when the child answers
+  useEffect(() => {
+    if (selected === null || questions.length === 0) return;
+    const q = questions[currentIndex];
+    const isCorrect = selected === q.correctOptionId;
+    const correctLabel = q.options.find((o) => o.id === q.correctOptionId)?.label ?? '';
+    const explanation = q.explanationNarration?.script ?? q.explanation ?? '';
+
+    const prefix = isCorrect
+      ? "That's right! "
+      : `Not quite! The right answer was ${correctLabel}. `;
+
+    speak(prefix + explanation, {
+      pitch: isCorrect ? 1.25 : 0.88,
+    });
+  }, [selected]);
+
+  // Speak results when the quiz is finished
+  useEffect(() => {
+    if (!done) return;
+    speak(scoreMessage(score, total), { pitch: score === total ? 1.3 : 1.0 });
+  }, [done]);
+
   function selectOption(optionId: string) {
     if (selected !== null) return;
+    stop(); // cut off the question read-aloud if still playing
     setSelected(optionId);
     if (optionId === questions[currentIndex].correctOptionId) {
       setScore((s) => s + 1);
@@ -218,10 +253,24 @@ export default function QuizScreen() {
               </Text>
             </View>
 
-            {/* Question */}
-            <Text style={styles.question} accessibilityRole="header">
-              {question.question}
-            </Text>
+            {/* Question row: text + re-read button */}
+            <View style={styles.questionRow}>
+              <Text style={styles.question} accessibilityRole="header">
+                {question.question}
+              </Text>
+              <Pressable
+                onPress={() => speak(question.narration.script)}
+                style={({ pressed }) => [
+                  styles.rereadBtn,
+                  { borderColor: color },
+                  pressed && styles.rereadBtnPressed,
+                ]}
+                accessibilityRole="button"
+                accessibilityLabel="Read question aloud again"
+              >
+                <Text style={[styles.rereadBtnText, { color }]}>Listen</Text>
+              </Pressable>
+            </View>
 
             {/* Options */}
             <View style={styles.options}>
@@ -296,12 +345,36 @@ const styles = StyleSheet.create({
   },
 
   // Question
+  questionRow: {
+    flexDirection: 'row',
+    alignItems: 'flex-start',
+    gap: theme.spacing.md,
+    marginBottom: theme.spacing.xl,
+  },
   question: {
+    flex: 1,
     fontSize: theme.typography.subheadingSize,
     fontWeight: theme.typography.bold,
     color: theme.colors.text,
-    marginBottom: theme.spacing.xl,
     lineHeight: theme.typography.subheadingSize * theme.typography.lineHeightMultiplier,
+  },
+  rereadBtn: {
+    minHeight: theme.touchTarget.min,
+    minWidth: theme.touchTarget.min,
+    paddingHorizontal: theme.spacing.md,
+    borderRadius: theme.borderRadius.full,
+    borderWidth: 2,
+    alignItems: 'center',
+    justifyContent: 'center',
+    alignSelf: 'flex-start',
+    marginTop: 2,
+  },
+  rereadBtnPressed: {
+    opacity: 0.75,
+  },
+  rereadBtnText: {
+    fontSize: theme.typography.captionSize,
+    fontWeight: theme.typography.bold,
   },
 
   // Options
