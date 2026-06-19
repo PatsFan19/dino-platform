@@ -1,11 +1,12 @@
-import { ScrollView, StyleSheet, Text, useWindowDimensions, View } from 'react-native';
-import { Stack, useLocalSearchParams } from 'expo-router';
+import { Pressable, ScrollView, StyleSheet, Text, useWindowDimensions, View } from 'react-native';
+import { Stack, useLocalSearchParams, useRouter } from 'expo-router';
 import { theme, DinoIllustration } from '@dinasour/ui';
 import { DINOSAURS } from '@dinasour/content';
-import { eraColor } from '../../utils/eraColor';
+import { eraColor } from '../../../utils/eraColor';
 
 export default function DinoDetailScreen() {
   const { id } = useLocalSearchParams<{ id: string }>();
+  const router = useRouter();
   const dino = DINOSAURS.find((d) => d.id === id);
 
   if (!dino) {
@@ -59,6 +60,22 @@ export default function DinoDetailScreen() {
         <View style={[styles.section, styles.sizeSection]}>
           <Text style={styles.sectionHeading}>How big was it?</Text>
           <Text style={styles.sizeText}>{dino.sizeComparison}</Text>
+        </View>
+
+        {/* Quiz CTA */}
+        <View style={styles.quizSection}>
+          <Pressable
+            onPress={() => router.push(`/dino/${id}/quiz`)}
+            style={({ pressed }) => [
+              styles.quizButton,
+              { backgroundColor: color },
+              pressed && styles.quizButtonPressed,
+            ]}
+            accessibilityRole="button"
+            accessibilityLabel={`Take the ${dino.name} quiz`}
+          >
+            <Text style={styles.quizButtonText}>Take the Quiz!</Text>
+          </Pressable>
         </View>
       </ScrollView>
     </>
@@ -134,6 +151,27 @@ const styles = StyleSheet.create({
     fontSize: theme.typography.bodySize,
     fontWeight: theme.typography.bold,
     color: theme.colors.text,
+  },
+  quizSection: {
+    padding: theme.spacing.lg,
+    paddingTop: theme.spacing.xl,
+  },
+  quizButton: {
+    minHeight: theme.touchTarget.recommended,
+    borderRadius: theme.borderRadius.lg,
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingVertical: theme.spacing.md,
+  },
+  quizButtonPressed: {
+    opacity: 0.85,
+    transform: [{ scale: 0.98 }],
+  },
+  quizButtonText: {
+    fontSize: theme.typography.subheadingSize,
+    fontWeight: theme.typography.bold,
+    color: theme.colors.white,
+    letterSpacing: 0.3,
   },
   notFound: {
     flex: 1,

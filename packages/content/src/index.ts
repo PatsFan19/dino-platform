@@ -9,4 +9,4 @@ export type {
   ContentBundle,
 } from './schemas';
 
-export { DINOSAURS } from './dinosaurs';
+export { DINOSAURS, DINO_QUIZ_MAP } from './dinosaurs';
