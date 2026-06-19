@@ -1,9 +1,12 @@
-import { Pressable, ScrollView, StyleSheet, Text, useWindowDimensions, View } from 'react-native';
+import { Platform, Pressable, ScrollView, StyleSheet, Text, useWindowDimensions, View } from 'react-native';
 import { Stack, useRouter } from 'expo-router';
 import { theme, DinoIllustration } from '@dinasour/ui';
 import { DINOSAURS } from '@dinasour/content';
 import type { TopicEntry } from '@dinasour/content';
 import { eraColor } from '../utils/eraColor';
+
+const IS_WEB = Platform.OS === 'web';
+const WEB_CARD_WIDTH = 220;
 
 function DinoCard({
   entry,
@@ -43,7 +46,9 @@ function DinoCard({
 export default function HomeScreen() {
   const { width } = useWindowDimensions();
   const router = useRouter();
-  const cardWidth = (width - theme.spacing.lg * 2 - theme.spacing.md) / 2;
+  const cardWidth = IS_WEB
+    ? WEB_CARD_WIDTH
+    : (width - theme.spacing.lg * 2 - theme.spacing.md) / 2;
 
   return (
     <>
@@ -56,16 +61,35 @@ export default function HomeScreen() {
         <Text style={styles.heading} accessibilityRole="header">
           Pick a Dinosaur!
         </Text>
-        <View style={styles.grid}>
-          {DINOSAURS.map((dino) => (
-            <DinoCard
-              key={dino.id}
-              entry={dino}
-              width={cardWidth}
-              onPress={() => router.push(`/dino/${dino.id}`)}
-            />
-          ))}
-        </View>
+        {IS_WEB ? (
+          <ScrollView
+            horizontal
+            showsHorizontalScrollIndicator={false}
+            style={styles.horizontalScroller}
+            contentContainerStyle={styles.horizontalList}
+            accessibilityLabel="Dinosaur card carousel, scroll left and right"
+          >
+            {DINOSAURS.map((dino) => (
+              <DinoCard
+                key={dino.id}
+                entry={dino}
+                width={WEB_CARD_WIDTH}
+                onPress={() => router.push(`/dino/${dino.id}`)}
+              />
+            ))}
+          </ScrollView>
+        ) : (
+          <View style={styles.grid}>
+            {DINOSAURS.map((dino) => (
+              <DinoCard
+                key={dino.id}
+                entry={dino}
+                width={cardWidth}
+                onPress={() => router.push(`/dino/${dino.id}`)}
+              />
+            ))}
+          </View>
+        )}
       </ScrollView>
     </>
   );
@@ -89,6 +113,15 @@ const styles = StyleSheet.create({
   grid: {
     flexDirection: 'row',
     flexWrap: 'wrap',
+    gap: theme.spacing.md,
+  },
+  // Web-only horizontal carousel — extends to screen edges by cancelling container padding
+  horizontalScroller: {
+    marginHorizontal: -theme.spacing.lg,
+  },
+  horizontalList: {
+    paddingHorizontal: theme.spacing.lg,
+    paddingBottom: theme.spacing.sm,
     gap: theme.spacing.md,
   },
   card: {
