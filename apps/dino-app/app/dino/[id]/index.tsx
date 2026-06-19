@@ -1,10 +1,23 @@
 import { useState } from 'react';
 import { Pressable, ScrollView, StyleSheet, Text, useWindowDimensions, View } from 'react-native';
+import Svg, { Path } from 'react-native-svg';
 import { Stack, useLocalSearchParams, useRouter } from 'expo-router';
 import { theme, DinoIllustration } from '@dinasour/ui';
 import { DINOSAURS } from '@dinasour/content';
 import { eraColor } from '../../../utils/eraColor';
 import { useSpeech } from '../../../hooks/useSpeech';
+import { SizeComparison } from '../../../components/SizeComparison';
+
+// Simple speaker icon (Material Design paths)
+function SpeakerIcon({ size = 22, color = '#fff' }: { size?: number; color?: string }) {
+  return (
+    <Svg width={size} height={size} viewBox="0 0 24 24">
+      <Path d="M3 9v6h4l5 5V4L7 9H3z" fill={color} />
+      <Path d="M16.5 12A4.5 4.5 0 0014 7.97v8.05c1.48-.73 2.5-2.25 2.5-3.97z" fill={color} opacity={0.7} />
+      <Path d="M14 3.23v2.06A6.5 6.5 0 0119 12a6.5 6.5 0 01-5 6.71v2.06A8.5 8.5 0 0021 12 8.5 8.5 0 0014 3.23z" fill={color} opacity={0.4} />
+    </Svg>
+  );
+}
 
 export default function DinoDetailScreen() {
   const { id } = useLocalSearchParams<{ id: string }>();
@@ -24,6 +37,10 @@ export default function DinoDetailScreen() {
 
   const color = eraColor(dino.category);
   const { width: screenWidth } = useWindowDimensions();
+
+  function speakPronunciation() {
+    speak(dino.pronunciation);
+  }
 
   function handleListen() {
     if (isSpeaking) {
@@ -65,6 +82,22 @@ export default function DinoDetailScreen() {
         <View style={styles.identity}>
           <Text style={styles.name}>{dino.name}</Text>
           <Text style={styles.pronunciation}>{dino.pronunciation}</Text>
+
+          {/* Pronunciation "Say it!" button */}
+          <Pressable
+            onPress={speakPronunciation}
+            style={({ pressed }) => [
+              styles.sayItBtn,
+              { backgroundColor: color },
+              pressed && styles.sayItBtnPressed,
+            ]}
+            accessibilityRole="button"
+            accessibilityLabel={`Hear how to say ${dino.name}: ${dino.pronunciation}`}
+          >
+            <SpeakerIcon size={22} color={theme.colors.white} />
+            <Text style={styles.sayItText}>Say it!</Text>
+          </Pressable>
+
           <View style={[styles.eraBadge, { backgroundColor: color + '22', borderColor: color }]}>
             <Text style={[styles.eraLabel, { color }]}>{dino.category}</Text>
           </View>
@@ -95,10 +128,11 @@ export default function DinoDetailScreen() {
           <Text style={styles.factText}>{dino.kidFact}</Text>
         </View>
 
-        {/* Size comparison */}
+        {/* Size comparison — visual + caption */}
         <View style={[styles.section, styles.sizeSection]}>
           <Text style={styles.sectionHeading}>How big was it?</Text>
-          <Text style={styles.sizeText}>{dino.sizeComparison}</Text>
+          <SizeComparison dinoId={dino.id} dinoName={dino.name} color={color} />
+          <Text style={styles.sizeCaption}>{dino.sizeComparison}</Text>
         </View>
 
         {/* Quiz CTA */}
@@ -149,6 +183,25 @@ const styles = StyleSheet.create({
     fontSize: theme.typography.bodySize,
     color: theme.colors.textMuted,
     fontStyle: 'italic',
+  },
+  sayItBtn: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: theme.spacing.sm,
+    alignSelf: 'flex-start',
+    minHeight: theme.touchTarget.min,
+    paddingHorizontal: theme.spacing.lg,
+    borderRadius: theme.borderRadius.full,
+  },
+  sayItBtnPressed: {
+    opacity: 0.80,
+    transform: [{ scale: 0.97 }],
+  },
+  sayItText: {
+    fontSize: theme.typography.subheadingSize,
+    fontWeight: theme.typography.bold,
+    color: theme.colors.white,
+    letterSpacing: 0.3,
   },
   eraBadge: {
     alignSelf: 'flex-start',
@@ -210,10 +263,11 @@ const styles = StyleSheet.create({
     borderRadius: theme.borderRadius.lg,
     marginHorizontal: theme.spacing.lg,
   },
-  sizeText: {
-    fontSize: theme.typography.bodySize,
-    fontWeight: theme.typography.bold,
-    color: theme.colors.text,
+  sizeCaption: {
+    fontSize: theme.typography.captionSize,
+    color: theme.colors.textMuted,
+    fontStyle: 'italic',
+    textAlign: 'center',
   },
   quizSection: {
     padding: theme.spacing.lg,
