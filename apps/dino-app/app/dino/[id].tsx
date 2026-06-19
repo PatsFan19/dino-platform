@@ -1,6 +1,6 @@
-import { ScrollView, StyleSheet, Text, View } from 'react-native';
+import { ScrollView, StyleSheet, Text, useWindowDimensions, View } from 'react-native';
 import { Stack, useLocalSearchParams } from 'expo-router';
-import { theme } from '@dinasour/ui';
+import { theme, DinoIllustration } from '@dinasour/ui';
 import { DINOSAURS } from '@dinasour/content';
 import { eraColor } from '../../utils/eraColor';
 
@@ -17,6 +17,7 @@ export default function DinoDetailScreen() {
   }
 
   const color = eraColor(dino.category);
+  const { width: screenWidth } = useWindowDimensions();
 
   return (
     <>
@@ -27,13 +28,15 @@ export default function DinoDetailScreen() {
         }}
       />
       <ScrollView style={styles.scroll} contentContainerStyle={styles.container}>
-        {/* Hero placeholder */}
+        {/* Hero illustration */}
         <View
-          style={[styles.hero, { backgroundColor: color }]}
+          style={[styles.hero, { backgroundColor: color + '18' }]}
           accessible
           accessibilityRole="image"
-          accessibilityLabel={`Illustration placeholder for ${dino.name}`}
-        />
+          accessibilityLabel={`Illustration of ${dino.name}`}
+        >
+          <DinoIllustration imageKey={dino.imageKey} width={screenWidth} height={220} />
+        </View>
 
         {/* Identity block */}
         <View style={styles.identity}>
@@ -73,7 +76,9 @@ const styles = StyleSheet.create({
   hero: {
     width: '100%',
     height: 220,
-    opacity: 0.85,
+    overflow: 'hidden',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   identity: {
     padding: theme.spacing.lg,

@@ -1,6 +1,6 @@
 import { Pressable, ScrollView, StyleSheet, Text, useWindowDimensions, View } from 'react-native';
 import { Stack, useRouter } from 'expo-router';
-import { theme } from '@dinasour/ui';
+import { theme, DinoIllustration } from '@dinasour/ui';
 import { DINOSAURS } from '@dinasour/content';
 import type { TopicEntry } from '@dinasour/content';
 import { eraColor } from '../utils/eraColor';
@@ -22,7 +22,9 @@ function DinoCard({
       accessibilityRole="button"
       accessibilityLabel={`${entry.name}, ${entry.category} period. Tap to learn more.`}
     >
-      <View style={[styles.imagePlaceholder, { backgroundColor: color }]} />
+      <View style={[styles.imagePlaceholder, { backgroundColor: color + '18' }]}>
+        <DinoIllustration imageKey={entry.imageKey} width={width} height={100} />
+      </View>
       <View style={styles.cardInfo}>
         <Text style={styles.cardName} numberOfLines={2}>
           {entry.name}
@@ -102,7 +104,9 @@ const styles = StyleSheet.create({
   imagePlaceholder: {
     height: 100,
     width: '100%',
-    opacity: 0.8,
+    overflow: 'hidden',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   cardInfo: {
     padding: theme.spacing.md,
