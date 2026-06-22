@@ -135,7 +135,7 @@ export default function DinoDetailScreen() {
           <Text style={styles.sizeCaption}>{dino.sizeComparison}</Text>
         </View>
 
-        {/* Quiz CTA */}
+        {/* CTAs */}
         <View style={styles.quizSection}>
           <Pressable
             onPress={() => router.push(`/dino/${id}/quiz`)}
@@ -148,6 +148,19 @@ export default function DinoDetailScreen() {
             accessibilityLabel={`Take the ${dino.name} quiz`}
           >
             <Text style={styles.quizButtonText}>Take the Quiz!</Text>
+          </Pressable>
+
+          <Pressable
+            onPress={() => router.push(`/dino/${id}/dig`)}
+            style={({ pressed }) => [
+              styles.quizButton,
+              styles.digButton,
+              pressed && styles.quizButtonPressed,
+            ]}
+            accessibilityRole="button"
+            accessibilityLabel={`Dig for the ${dino.name} fossil`}
+          >
+            <Text style={[styles.quizButtonText, styles.digButtonText]}>Dig for Fossils!</Text>
           </Pressable>
         </View>
       </ScrollView>
@@ -272,6 +285,7 @@ const styles = StyleSheet.create({
   quizSection: {
     padding: theme.spacing.lg,
     paddingTop: theme.spacing.xl,
+    gap: theme.spacing.md,
   },
   quizButton: {
     minHeight: theme.touchTarget.recommended,
@@ -289,6 +303,12 @@ const styles = StyleSheet.create({
     fontWeight: theme.typography.bold,
     color: theme.colors.white,
     letterSpacing: 0.3,
+  },
+  digButton: {
+    backgroundColor: '#7A5C0F',
+  },
+  digButtonText: {
+    color: theme.colors.white,
   },
   notFound: {
     flex: 1,
