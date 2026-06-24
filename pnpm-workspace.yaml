@@ -3,7 +3,7 @@ packages:
   - 'packages/*'
 
 allowBuilds:
-  sharp: set this to true or false
+  sharp: true
 
 overrides:
   # dino-app uses React 19 (SDK 54). website stays on 18.

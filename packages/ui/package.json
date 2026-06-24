@@ -11,11 +11,13 @@
     "typecheck": "tsc --noEmit"
   },
   "peerDependencies": {
-    "react": ">=18",
-    "react-native": ">=0.74"
+    "react": "19.1.0",
+    "react-native": "0.81.5"
   },
   "devDependencies": {
     "@types/react": "~19.1.17",
+    "react": "19.1.0",
+    "react-native": "0.81.5",
     "typescript": "^5.4.0"
   }
 }
