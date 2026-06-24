@@ -1,23 +1,11 @@
 import { useState } from 'react';
 import { Pressable, ScrollView, StyleSheet, Text, useWindowDimensions, View } from 'react-native';
-import Svg, { Path } from 'react-native-svg';
 import { Stack, useLocalSearchParams, useRouter } from 'expo-router';
 import { theme, DinoIllustration } from '@dinasour/ui';
 import { DINOSAURS } from '@dinasour/content';
 import { eraColor } from '../../../utils/eraColor';
 import { useSpeech } from '../../../hooks/useSpeech';
 import { SizeComparison } from '../../../components/SizeComparison';
-
-// Simple speaker icon (Material Design paths)
-function SpeakerIcon({ size = 22, color = '#fff' }: { size?: number; color?: string }) {
-  return (
-    <Svg width={size} height={size} viewBox="0 0 24 24">
-      <Path d="M3 9v6h4l5 5V4L7 9H3z" fill={color} />
-      <Path d="M16.5 12A4.5 4.5 0 0014 7.97v8.05c1.48-.73 2.5-2.25 2.5-3.97z" fill={color} opacity={0.7} />
-      <Path d="M14 3.23v2.06A6.5 6.5 0 0119 12a6.5 6.5 0 01-5 6.71v2.06A8.5 8.5 0 0021 12 8.5 8.5 0 0014 3.23z" fill={color} opacity={0.4} />
-    </Svg>
-  );
-}
 
 export default function DinoDetailScreen() {
   const { id } = useLocalSearchParams<{ id: string }>();
@@ -94,7 +82,7 @@ export default function DinoDetailScreen() {
             accessibilityRole="button"
             accessibilityLabel={`Hear how to say ${dino.name}: ${dino.pronunciation}`}
           >
-            <SpeakerIcon size={22} color={theme.colors.white} />
+            <Text style={styles.speakerEmoji}>🔊</Text>
             <Text style={styles.sayItText}>Say it!</Text>
           </Pressable>
 
@@ -209,6 +197,9 @@ const styles = StyleSheet.create({
   sayItBtnPressed: {
     opacity: 0.80,
     transform: [{ scale: 0.97 }],
+  },
+  speakerEmoji: {
+    fontSize: 20,
   },
   sayItText: {
     fontSize: theme.typography.subheadingSize,

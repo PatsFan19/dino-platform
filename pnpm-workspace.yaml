@@ -8,6 +8,3 @@ allowBuilds:
 overrides:
   # dino-app uses React 19 (SDK 54). website stays on 18.
   # Removed workspace-wide pin; each app manages its own React version.
-  # Single react-native-svg version across the whole workspace —
-  # native modules must be installed exactly once or the bridge breaks.
-  react-native-svg: "15.12.1"

@@ -1,45 +1,44 @@
-import React, { Suspense } from 'react';
-import { View } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 
-interface IllustrationProps {
+interface DinoIllustrationProps {
+  imageKey: string;
   width?: number;
   height?: number;
 }
 
-// Each entry is a React.lazy() wrapper.
-// The dynamic import() is NOT evaluated until the component first renders,
-// which defers the `import Svg from 'react-native-svg'` inside each file
-// until after the New Architecture native runtime is fully initialised.
-// Calling React.lazy() itself at module level is safe — it only stores
-// a factory function; it never calls it until render time.
-const REGISTRY: Record<string, React.LazyExoticComponent<React.ComponentType<IllustrationProps>>> = {
-  'dinosaurs/t-rex':
-    React.lazy(() => import('./TRex').then(m => ({ default: m.TRexIllustration }))),
-  'dinosaurs/triceratops':
-    React.lazy(() => import('./Triceratops').then(m => ({ default: m.TriceratopsIllustration }))),
-  'dinosaurs/stegosaurus':
-    React.lazy(() => import('./Stegosaurus').then(m => ({ default: m.StegosaurusIllustration }))),
-  'dinosaurs/velociraptor':
-    React.lazy(() => import('./Velociraptor').then(m => ({ default: m.VelociraptorIllustration }))),
-  'dinosaurs/brachiosaurus':
-    React.lazy(() => import('./Brachiosaurus').then(m => ({ default: m.BrachiosaurusIllustration }))),
-  'dinosaurs/pteranodon':
-    React.lazy(() => import('./Pteranodon').then(m => ({ default: m.PteranodonIllustration }))),
+const DINO_MAP: Record<string, { emoji: string; bg: string }> = {
+  'dinosaurs/t-rex':         { emoji: '🦖', bg: '#E8533F' },
+  'dinosaurs/triceratops':   { emoji: '🦕', bg: '#3B82F6' },
+  'dinosaurs/stegosaurus':   { emoji: '🦕', bg: '#22C55E' },
+  'dinosaurs/velociraptor':  { emoji: '🦖', bg: '#F97316' },
+  'dinosaurs/brachiosaurus': { emoji: '🦕', bg: '#A855F7' },
+  'dinosaurs/pteranodon':    { emoji: '🦅', bg: '#14B8A6' },
 };
 
-interface DinoIllustrationProps extends IllustrationProps {
-  imageKey: string;
-}
-
 export function DinoIllustration({ imageKey, width = 200, height = 160 }: DinoIllustrationProps) {
-  const Component = REGISTRY[imageKey];
-  if (!Component) return null;
-  // Suspense boundary lives here so screens need no changes.
-  // Fallback is a transparent View with identical dimensions to prevent
-  // layout shift while the SVG module initialises.
+  const cfg = DINO_MAP[imageKey];
+  if (!cfg) return null;
+  const fontSize = Math.min(width, height) * 0.55;
   return (
-    <Suspense fallback={<View style={{ width, height }} />}>
-      <Component width={width} height={height} />
-    </Suspense>
+    <View
+      style={[styles.box, { width, height, backgroundColor: cfg.bg }]}
+      accessible
+      accessibilityRole="image"
+      accessibilityLabel={`${imageKey.replace('dinosaurs/', '')} illustration`}
+    >
+      <Text style={[styles.emoji, { fontSize }]}>{cfg.emoji}</Text>
+    </View>
   );
 }
+
+const styles = StyleSheet.create({
+  box: {
+    borderRadius: 16,
+    alignItems: 'center',
+    justifyContent: 'center',
+    overflow: 'hidden',
+  },
+  emoji: {
+    lineHeight: undefined,
+  },
+});
