@@ -35,6 +35,7 @@
         }
       ]
     ],
+    "newArchEnabled": false,
     "experiments": {
       "typedRoutes": true
     }
