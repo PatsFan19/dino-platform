@@ -6,5 +6,5 @@ allowBuilds:
   sharp: set this to true or false
 
 overrides:
-  react: "18.3.1"
-  react-dom: "18.3.1"
+  # dino-app uses React 19 (SDK 54). website stays on 18.
+  # Removed workspace-wide pin; each app manages its own React version.
