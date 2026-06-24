@@ -29,6 +29,45 @@ const labelColors: Record<Variant, string> = {
   ghost: theme.colors.primary,
 };
 
+// Lazy initializer — StyleSheet.create must not run at module load time
+// under the New Architecture because native is not yet fully initialised.
+let _styles: ReturnType<typeof buildStyles> | undefined;
+function buildStyles() {
+  return StyleSheet.create({
+    base: {
+      minHeight: theme.touchTarget.recommended,
+      minWidth: theme.touchTarget.recommended,
+      paddingHorizontal: theme.spacing.xl,
+      paddingVertical: theme.spacing.md,
+      borderRadius: theme.borderRadius.lg,
+      alignItems: 'center',
+      justifyContent: 'center',
+    },
+    primary: {
+      backgroundColor: theme.colors.primary,
+    },
+    secondary: {
+      backgroundColor: theme.colors.secondary,
+    },
+    ghost: {
+      backgroundColor: 'transparent',
+      borderWidth: 2,
+      borderColor: theme.colors.primary,
+    },
+    disabled: {
+      opacity: 0.4,
+    },
+    pressed: {
+      opacity: 0.85,
+    },
+    label: {
+      fontSize: theme.typography.bodySize,
+      fontWeight: theme.typography.bold,
+      letterSpacing: 0.3,
+    },
+  });
+}
+
 export function Button({
   label,
   onPress,
@@ -39,6 +78,7 @@ export function Button({
   labelStyle,
   accessibilityLabel,
 }: ButtonProps) {
+  const styles = (_styles ??= buildStyles());
   const isDisabled = disabled || loading;
   return (
     <Pressable
@@ -66,36 +106,3 @@ export function Button({
   );
 }
 
-const styles = StyleSheet.create({
-  base: {
-    minHeight: theme.touchTarget.recommended,
-    minWidth: theme.touchTarget.recommended,
-    paddingHorizontal: theme.spacing.xl,
-    paddingVertical: theme.spacing.md,
-    borderRadius: theme.borderRadius.lg,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  primary: {
-    backgroundColor: theme.colors.primary,
-  },
-  secondary: {
-    backgroundColor: theme.colors.secondary,
-  },
-  ghost: {
-    backgroundColor: 'transparent',
-    borderWidth: 2,
-    borderColor: theme.colors.primary,
-  },
-  disabled: {
-    opacity: 0.4,
-  },
-  pressed: {
-    opacity: 0.85,
-  },
-  label: {
-    fontSize: theme.typography.bodySize,
-    fontWeight: theme.typography.bold,
-    letterSpacing: 0.3,
-  },
-});
