@@ -6,9 +6,9 @@ const MAX_BOX_H = 100; // tallest box height in pts
 interface Config { objEmoji: string; objLabel: string; dinoFrac: number; objFrac: number; }
 
 const CONFIGS: Record<string, Config> = {
-  't-rex':         { objEmoji: '🚌', objLabel: 'School Bus', dinoFrac: 1.00, objFrac: 0.53 },
-  'brachiosaurus': { objEmoji: '🚌', objLabel: 'School Bus', dinoFrac: 1.00, objFrac: 0.25 },
-  'triceratops':   { objEmoji: '🚗', objLabel: 'Car',         dinoFrac: 1.00, objFrac: 0.50 },
+  't-rex':         { objEmoji: '🏠', objLabel: 'House',        dinoFrac: 0.90, objFrac: 1.00 },
+  'brachiosaurus': { objEmoji: '🏢', objLabel: 'Building',    dinoFrac: 1.00, objFrac: 0.90 },
+  'triceratops':   { objEmoji: '🚛', objLabel: 'Pickup Truck', dinoFrac: 1.00, objFrac: 0.61 },
   'stegosaurus':   { objEmoji: '🚌', objLabel: 'School Bus',   dinoFrac: 1.00, objFrac: 0.80 },
   'velociraptor':  { objEmoji: '🧑', objLabel: 'Person',      dinoFrac: 0.29, objFrac: 1.00 },
   'pteranodon':    { objEmoji: '🚗', objLabel: 'Car',          dinoFrac: 1.00, objFrac: 0.60 },
