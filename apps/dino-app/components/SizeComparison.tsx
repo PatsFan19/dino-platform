@@ -9,9 +9,9 @@ const CONFIGS: Record<string, Config> = {
   't-rex':         { objEmoji: '🚌', objLabel: 'School Bus', dinoFrac: 1.00, objFrac: 0.53 },
   'brachiosaurus': { objEmoji: '🚌', objLabel: 'School Bus', dinoFrac: 1.00, objFrac: 0.25 },
   'triceratops':   { objEmoji: '🚗', objLabel: 'Car',         dinoFrac: 1.00, objFrac: 0.50 },
-  'stegosaurus':   { objEmoji: '🚗', objLabel: 'Car',         dinoFrac: 1.00, objFrac: 0.37 },
+  'stegosaurus':   { objEmoji: '🚌', objLabel: 'School Bus',   dinoFrac: 1.00, objFrac: 0.80 },
   'velociraptor':  { objEmoji: '🧑', objLabel: 'Person',      dinoFrac: 0.29, objFrac: 1.00 },
-  'pteranodon':    { objEmoji: '🦅', objLabel: 'Person',      dinoFrac: 0.78, objFrac: 1.00 },
+  'pteranodon':    { objEmoji: '🚗', objLabel: 'Car',          dinoFrac: 1.00, objFrac: 0.60 },
 };
 
 const DINO_EMOJIS: Record<string, string> = {
