@@ -1,0 +1,9 @@
+{
+  "buildCommand": "pnpm install && pnpm --filter dino-app exec expo export --platform web",
+  "outputDirectory": "apps/dino-app/dist",
+  "installCommand": "npm install -g pnpm",
+  "rewrites": [
+    { "source": "/dino/:path*", "destination": "/index.html" },
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
+}
