@@ -27,7 +27,7 @@ export default function DinoDetailScreen() {
   const { width: screenWidth } = useWindowDimensions();
 
   function speakPronunciation() {
-    speak(dino.pronunciation);
+    speak(dino!.pronunciation);
   }
 
   function handleListen() {
@@ -37,7 +37,7 @@ export default function DinoDetailScreen() {
     } else {
       setIsSpeaking(true);
       speak(
-        `${dino.name}. ${dino.kidFact}. How big was it? ${dino.sizeComparison}.`,
+        `${dino!.name}. ${dino!.kidFact}. How big was it? ${dino!.sizeComparison}.`,
         {
           onDone: () => setIsSpeaking(false),
           onStopped: () => setIsSpeaking(false),

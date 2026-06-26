@@ -274,3 +274,16 @@
   opacity: 0.7;
   margin-bottom: 2px;
 }
+
+.openAppLink {
+  display: inline-block;
+  margin-top: 20px;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--green);
+  text-decoration: none;
+}
+
+.openAppLink:hover {
+  text-decoration: underline;
+}

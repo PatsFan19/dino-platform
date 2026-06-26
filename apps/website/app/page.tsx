@@ -97,6 +97,9 @@ export default function HomePage() {
           <StoreBadge emoji="🍎" label="App Store" sub="Download on the" />
           <StoreBadge emoji="▶️" label="Google Play" sub="Get it on" />
         </div>
+        <a href="dinoworld://" className={s.openAppLink}>
+          Already have the app? Open it →
+        </a>
       </section>
 
       <Footer />

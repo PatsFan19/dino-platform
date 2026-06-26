@@ -7,6 +7,7 @@ import type { TopicEntry } from '@dinasour/content';
 import { eraColor } from '../utils/eraColor';
 import { useProgress } from '../hooks/useProgress';
 import type { QuizResult } from '../hooks/useProgress';
+import { useAllDigProgress } from '../hooks/useAllDigProgress';
 
 const IS_WEB = Platform.OS === 'web';
 const WEB_CARD_WIDTH = 220;
@@ -27,11 +28,13 @@ function DinoCard({
   entry,
   width,
   result,
+  digDone,
   onPress,
 }: {
   entry: TopicEntry;
   width: number;
   result: QuizResult | undefined;
+  digDone: boolean;
   onPress: () => void;
 }) {
   const color = eraColor(entry.category);
@@ -44,11 +47,14 @@ function DinoCard({
     >
       <View style={[styles.imagePlaceholder, { backgroundColor: color + '18' }]}>
         <DinoIllustration imageKey={entry.imageKey} width={width} height={100} />
-        {result ? (
-          <View style={styles.badgeContainer}>
-            <ScoreBadge result={result} />
-          </View>
-        ) : null}
+        <View style={styles.badgeContainer}>
+          {result ? <ScoreBadge result={result} /> : null}
+          {digDone ? (
+            <View style={styles.digBadge} accessibilityLabel="Fossil dig complete">
+              <Text style={styles.digBadgeText}>⛏️</Text>
+            </View>
+          ) : null}
+        </View>
       </View>
       <View style={styles.cardInfo}>
         <Text style={styles.cardName} numberOfLines={2}>
@@ -65,28 +71,48 @@ function DinoCard({
   );
 }
 
-function ProgressBanner({ completed, total }: { completed: number; total: number }) {
-  if (completed === 0) return null;
-  const allDone = completed === total;
+function ProgressBanner({
+  progress,
+  completedDigs,
+}: {
+  progress: Record<string, QuizResult | undefined>;
+  completedDigs: Set<string>;
+}) {
+  const quizCount = DINOSAURS.filter((d) => progress[d.id]).length;
+  const digCount = DINOSAURS.filter((d) => completedDigs.has(d.id)).length;
+  if (quizCount === 0 && digCount === 0) return null;
+  const total = DINOSAURS.length;
+  const allQuizDone = quizCount === total;
+  const allDigDone = digCount === total;
   return (
     <View
-      style={[styles.banner, allDone && styles.bannerComplete]}
+      style={[styles.banner, allQuizDone && allDigDone && styles.bannerComplete]}
       accessible
       accessibilityRole="text"
-      accessibilityLabel={`You have completed ${completed} out of ${total} quizzes`}
+      accessibilityLabel={`${quizCount} of ${total} quizzes done, ${digCount} of ${total} fossil digs done`}
     >
       <Text style={styles.bannerText}>
-        {allDone
-          ? 'You completed all quizzes — dino expert!'
-          : `${completed} of ${total} quizzes done`}
+        {allQuizDone && allDigDone
+          ? 'All quizzes and digs done — dino expert! 🎉'
+          : `🧠 ${quizCount}/${total} quizzes · ⛏️ ${digCount}/${total} digs`}
       </Text>
-      <View style={styles.bannerDots}>
-        {DINOSAURS.map((d) => (
-          <View
-            key={d.id}
-            style={[styles.bannerDot, completed > DINOSAURS.indexOf(d) && styles.bannerDotFilled]}
-          />
-        ))}
+      <View style={styles.bannerRows}>
+        <View style={styles.bannerDots}>
+          {DINOSAURS.map((d) => (
+            <View
+              key={`quiz-${d.id}`}
+              style={[styles.bannerDot, progress[d.id] && styles.bannerDotFilled]}
+            />
+          ))}
+        </View>
+        <View style={styles.bannerDots}>
+          {DINOSAURS.map((d) => (
+            <View
+              key={`dig-${d.id}`}
+              style={[styles.bannerDot, styles.bannerDotDig, completedDigs.has(d.id) && styles.bannerDotDigFilled]}
+            />
+          ))}
+        </View>
       </View>
     </View>
   );
@@ -95,10 +121,13 @@ function ProgressBanner({ completed, total }: { completed: number; total: number
 export default function HomeScreen() {
   const { width } = useWindowDimensions();
   const router = useRouter();
-  const { progress, load, completedCount } = useProgress();
+  const { progress, load: loadQuiz } = useProgress();
+  const { completedDigs, load: loadDigs } = useAllDigProgress();
 
-  // Refresh whenever the home screen comes back into focus
-  useFocusEffect(useCallback(() => { load(); }, [load]));
+  useFocusEffect(useCallback(() => {
+    loadQuiz();
+    loadDigs();
+  }, [loadQuiz, loadDigs]));
 
   const cardWidth = IS_WEB
     ? WEB_CARD_WIDTH
@@ -116,7 +145,7 @@ export default function HomeScreen() {
           Pick a Dinosaur!
         </Text>
 
-        <ProgressBanner completed={completedCount} total={DINOSAURS.length} />
+        <ProgressBanner progress={progress} completedDigs={completedDigs} />
 
         {IS_WEB ? (
           <ScrollView
@@ -132,6 +161,7 @@ export default function HomeScreen() {
                 entry={dino}
                 width={WEB_CARD_WIDTH}
                 result={progress[dino.id]}
+                digDone={completedDigs.has(dino.id)}
                 onPress={() => router.push(`/dino/${dino.id}`)}
               />
             ))}
@@ -144,6 +174,7 @@ export default function HomeScreen() {
                 entry={dino}
                 width={cardWidth}
                 result={progress[dino.id]}
+                digDone={completedDigs.has(dino.id)}
                 onPress={() => router.push(`/dino/${dino.id}`)}
               />
             ))}
@@ -186,6 +217,9 @@ const styles = StyleSheet.create({
     fontWeight: theme.typography.bold,
     color: theme.colors.text,
   },
+  bannerRows: {
+    gap: theme.spacing.xs,
+  },
   bannerDots: {
     flexDirection: 'row',
     gap: theme.spacing.xs,
@@ -202,12 +236,21 @@ const styles = StyleSheet.create({
     backgroundColor: theme.colors.primary,
     borderColor: theme.colors.primary,
   },
+  bannerDotDig: {
+    borderRadius: 2,
+  },
+  bannerDotDigFilled: {
+    backgroundColor: '#7A5C0F',
+    borderColor: '#7A5C0F',
+  },
 
-  // Score badge overlaid on the card image
+  // Badges overlaid on the card image
   badgeContainer: {
     position: 'absolute',
     top: theme.spacing.xs,
     right: theme.spacing.xs,
+    gap: 4,
+    alignItems: 'flex-end',
   },
   badge: {
     paddingHorizontal: theme.spacing.sm,
@@ -218,6 +261,17 @@ const styles = StyleSheet.create({
     fontSize: 12,
     fontWeight: theme.typography.bold,
     color: theme.colors.white,
+  },
+  digBadge: {
+    backgroundColor: 'rgba(0,0,0,0.45)',
+    borderRadius: theme.borderRadius.full,
+    width: 24,
+    height: 24,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  digBadgeText: {
+    fontSize: 13,
   },
 
   // Layout
