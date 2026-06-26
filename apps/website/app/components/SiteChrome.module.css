@@ -1,0 +1,90 @@
+/* ── Nav ─────────────────────────────────────────────── */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(255, 253, 245, 0.88);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--green-mid);
+  padding: 0 24px;
+}
+
+.navInner {
+  max-width: 1000px;
+  margin: 0 auto;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navLogo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--green);
+  text-decoration: none;
+}
+
+.navLogoEmoji {
+  font-size: 26px;
+  line-height: 1;
+}
+
+.navBadge {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--green);
+  background: var(--green-light);
+  border: 1px solid var(--green-mid);
+  border-radius: var(--radius-full);
+  padding: 4px 12px;
+}
+
+/* ── Footer ──────────────────────────────────────────── */
+.footer {
+  border-top: 1px solid var(--green-mid);
+  padding: 32px 24px;
+}
+
+.footerInner {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.footerLogo {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--green);
+}
+
+.footerLinks {
+  display: flex;
+  gap: 24px;
+  list-style: none;
+}
+
+.footerLinks a {
+  font-size: 14px;
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.footerLinks a:hover {
+  color: var(--green);
+}
+
+.footerCopy {
+  font-size: 13px;
+  color: var(--muted);
+  width: 100%;
+  text-align: center;
+  margin-top: 8px;
+}
