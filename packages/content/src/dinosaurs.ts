@@ -73,6 +73,71 @@ export const DINOSAURS: TopicEntry[] = [
     sizeComparison: 'wingspan as wide as a small car is long',
     imageKey: 'dinosaurs/pteranodon',
   },
+  {
+    id: 'spinosaurus',
+    name: 'Spinosaurus',
+    pronunciation: 'SPY-noh-SOR-us',
+    category: 'Cretaceous',
+    kidFact:
+      'Spinosaurus was the largest meat-eating dinosaur ever discovered — even bigger than ' +
+      'T. Rex! It had a giant sail on its back made of long spines, which may have helped ' +
+      'it stay cool or impress friends. Scientists think it was an expert fisher that waded ' +
+      'into rivers to catch enormous fish with its crocodile-like snout.',
+    sizeComparison: 'longer than a school bus',
+    imageKey: 'dinosaurs/spinosaurus',
+  },
+  {
+    id: 'ankylosaurus',
+    name: 'Ankylosaurus',
+    pronunciation: 'an-KY-loh-SOR-us',
+    category: 'Cretaceous',
+    kidFact:
+      'Ankylosaurus was built like a living tank — its back was covered in thick bony ' +
+      'armour, and spikes stuck out from its sides. Its most fearsome feature was the ' +
+      'enormous bony club on the end of its tail, which could swing with enough force ' +
+      'to shatter bones. Even T. Rex would think twice before picking a fight!',
+    sizeComparison: 'as long as a large pickup truck',
+    imageKey: 'dinosaurs/ankylosaurus',
+  },
+  {
+    id: 'parasaurolophus',
+    name: 'Parasaurolophus',
+    pronunciation: 'par-ah-SOR-oh-LOH-fus',
+    category: 'Cretaceous',
+    kidFact:
+      'Parasaurolophus had a long, curved hollow tube on top of its head — like a ' +
+      'built-in musical instrument! By blowing air through the tube, it could make a ' +
+      'deep, booming call to communicate with its herd from far away. Scientists built ' +
+      'a model of the crest and played it — it sounded just like a low trombone!',
+    sizeComparison: 'about the same length as a school bus',
+    imageKey: 'dinosaurs/parasaurolophus',
+  },
+  {
+    id: 'pachycephalosaurus',
+    name: 'Pachycephalosaurus',
+    pronunciation: 'pak-ee-SEF-ah-loh-SOR-us',
+    category: 'Cretaceous',
+    kidFact:
+      'Pachycephalosaurus had a dome of solid bone on top of its head up to 25 centimetres ' +
+      'thick — almost as thick as your arm is long! Males would charge at each other and ' +
+      'crash their domed heads together to compete, just like bighorn sheep do today. ' +
+      'Its name literally means "thick-headed lizard"!',
+    sizeComparison: 'about the length of a large car',
+    imageKey: 'dinosaurs/pachycephalosaurus',
+  },
+  {
+    id: 'diplodocus',
+    name: 'Diplodocus',
+    pronunciation: 'dip-LOD-oh-kus',
+    category: 'Jurassic',
+    kidFact:
+      'Diplodocus had one of the longest tails of any animal that ever lived — up to ' +
+      '14 metres! Scientists think it could crack its tail like a whip, creating a sonic ' +
+      'boom louder than a thunderclap. Despite being one of the longest animals ever, ' +
+      'its head was tiny and it spent its days peacefully munching plants.',
+    sizeComparison: 'as long as three school buses end to end',
+    imageKey: 'dinosaurs/diplodocus',
+  },
 ];
 
 export const DINO_QUIZ_MAP: Record<string, QuizQuestion[]> = {
@@ -358,6 +423,231 @@ export const DINO_QUIZ_MAP: Record<string, QuizQuestion[]> = {
         locale: 'en-US',
         script: 'Brachiosaurus needed to munch through roughly 400 kilograms of plants every single day just to stay full — that is like eating a whole car full of salad!',
       },
+    },
+  ],
+
+  'spinosaurus': [
+    {
+      id: 'spinosaurus-q1',
+      topicId: 'topic-dinosaurs',
+      question: 'Which dinosaur was bigger — T. Rex or Spinosaurus?',
+      narration: { locale: 'en-US', script: 'Which dinosaur was bigger — T. Rex or Spinosaurus?' },
+      options: [
+        { id: 'a', label: 'T. Rex was much bigger' },
+        { id: 'b', label: 'They were exactly the same size' },
+        { id: 'c', label: 'Spinosaurus was bigger!' },
+      ],
+      correctOptionId: 'c',
+      explanation: 'Spinosaurus is the largest meat-eating dinosaur ever found — even bigger than T. Rex!',
+      explanationNarration: { locale: 'en-US', script: 'Spinosaurus is the largest meat-eating dinosaur ever found — even bigger than T. Rex!' },
+    },
+    {
+      id: 'spinosaurus-q2',
+      topicId: 'topic-dinosaurs',
+      question: "What was the tall structure on Spinosaurus's back?",
+      narration: { locale: 'en-US', script: "What was the tall structure on Spinosaurus's back?" },
+      options: [
+        { id: 'a', label: 'A shell like a turtle' },
+        { id: 'b', label: 'A sail made of long spines' },
+        { id: 'c', label: 'Feathers for flying' },
+      ],
+      correctOptionId: 'b',
+      explanation: 'Spinosaurus had a giant sail on its back made of long spines — it may have helped it stay cool or impress other dinosaurs!',
+      explanationNarration: { locale: 'en-US', script: 'Spinosaurus had a giant sail on its back made of long spines — it may have helped it stay cool or impress other dinosaurs!' },
+    },
+    {
+      id: 'spinosaurus-q3',
+      topicId: 'topic-dinosaurs',
+      question: 'What did Spinosaurus mostly eat?',
+      narration: { locale: 'en-US', script: 'What did Spinosaurus mostly eat?' },
+      options: [
+        { id: 'a', label: 'Plants and berries' },
+        { id: 'b', label: 'Other dinosaurs' },
+        { id: 'c', label: 'Fish from rivers' },
+      ],
+      correctOptionId: 'c',
+      explanation: 'Spinosaurus was an expert fisher! Its long crocodile-like snout was perfect for snatching fish from rivers.',
+      explanationNarration: { locale: 'en-US', script: 'Spinosaurus was an expert fisher! Its long crocodile-like snout was perfect for snatching fish from rivers.' },
+    },
+  ],
+
+  'ankylosaurus': [
+    {
+      id: 'ankylosaurus-q1',
+      topicId: 'topic-dinosaurs',
+      question: "What covered Ankylosaurus's back?",
+      narration: { locale: 'en-US', script: "What covered Ankylosaurus's back?" },
+      options: [
+        { id: 'a', label: 'Thick bony armour' },
+        { id: 'b', label: 'Feathers' },
+        { id: 'c', label: 'Scales like a fish' },
+      ],
+      correctOptionId: 'a',
+      explanation: "Ankylosaurus was like a living tank — its back was covered in thick bony armour to protect it from predators!",
+      explanationNarration: { locale: 'en-US', script: "Ankylosaurus was like a living tank — its back was covered in thick bony armour to protect it from predators!" },
+    },
+    {
+      id: 'ankylosaurus-q2',
+      topicId: 'topic-dinosaurs',
+      question: "What weapon did Ankylosaurus have on its tail?",
+      narration: { locale: 'en-US', script: "What weapon did Ankylosaurus have on its tail?" },
+      options: [
+        { id: 'a', label: 'Sharp spikes' },
+        { id: 'b', label: 'A massive bony club' },
+        { id: 'c', label: 'A whip-like tip' },
+      ],
+      correctOptionId: 'b',
+      explanation: 'The club on the end of its tail could swing hard enough to shatter bones — even T. Rex would avoid picking a fight!',
+      explanationNarration: { locale: 'en-US', script: 'The club on the end of its tail could swing hard enough to shatter bones — even T. Rex would avoid picking a fight!' },
+    },
+    {
+      id: 'ankylosaurus-q3',
+      topicId: 'topic-dinosaurs',
+      question: 'What did Ankylosaurus eat?',
+      narration: { locale: 'en-US', script: 'What did Ankylosaurus eat?' },
+      options: [
+        { id: 'a', label: 'Meat from other dinosaurs' },
+        { id: 'b', label: 'Fish' },
+        { id: 'c', label: 'Plants' },
+      ],
+      correctOptionId: 'c',
+      explanation: 'Despite all that armour and weaponry, Ankylosaurus was actually a peaceful plant-eater!',
+      explanationNarration: { locale: 'en-US', script: 'Despite all that armour and weaponry, Ankylosaurus was actually a peaceful plant-eater!' },
+    },
+  ],
+
+  'parasaurolophus': [
+    {
+      id: 'parasaurolophus-q1',
+      topicId: 'topic-dinosaurs',
+      question: "What was the long hollow tube on Parasaurolophus's head used for?",
+      narration: { locale: 'en-US', script: "What was the long hollow tube on Parasaurolophus's head used for?" },
+      options: [
+        { id: 'a', label: 'Storing food' },
+        { id: 'b', label: 'Making sounds to communicate' },
+        { id: 'c', label: 'Sniffing out predators' },
+      ],
+      correctOptionId: 'b',
+      explanation: 'The hollow tube worked like a musical instrument — Parasaurolophus could blow air through it to make a deep booming call!',
+      explanationNarration: { locale: 'en-US', script: 'The hollow tube worked like a musical instrument — Parasaurolophus could blow air through it to make a deep booming call!' },
+    },
+    {
+      id: 'parasaurolophus-q2',
+      topicId: 'topic-dinosaurs',
+      question: "What did Parasaurolophus's call sound like?",
+      narration: { locale: 'en-US', script: "What did Parasaurolophus's call sound like?" },
+      options: [
+        { id: 'a', label: 'A high-pitched squeak' },
+        { id: 'b', label: 'Complete silence' },
+        { id: 'c', label: 'A deep booming sound like a trombone' },
+      ],
+      correctOptionId: 'c',
+      explanation: 'Scientists built a model of the crest and played it — it made a low booming sound just like a trombone!',
+      explanationNarration: { locale: 'en-US', script: 'Scientists built a model of the crest and played it — it made a low booming sound just like a trombone!' },
+    },
+    {
+      id: 'parasaurolophus-q3',
+      topicId: 'topic-dinosaurs',
+      question: 'What did Parasaurolophus eat?',
+      narration: { locale: 'en-US', script: 'What did Parasaurolophus eat?' },
+      options: [
+        { id: 'a', label: 'Meat' },
+        { id: 'b', label: 'Plants' },
+        { id: 'c', label: 'Fish' },
+      ],
+      correctOptionId: 'b',
+      explanation: 'Parasaurolophus was a herbivore — a plant eater! Its flat duck-like beak was great for snipping leaves.',
+      explanationNarration: { locale: 'en-US', script: 'Parasaurolophus was a herbivore — a plant eater! Its flat duck-like beak was great for snipping leaves.' },
+    },
+  ],
+
+  'pachycephalosaurus': [
+    {
+      id: 'pachycephalosaurus-q1',
+      topicId: 'topic-dinosaurs',
+      question: "What was special about Pachycephalosaurus's skull?",
+      narration: { locale: 'en-US', script: "What was special about Pachycephalosaurus's skull?" },
+      options: [
+        { id: 'a', label: 'It had three long horns' },
+        { id: 'b', label: 'It had a super-thick dome of solid bone' },
+        { id: 'c', label: 'It was shaped like a sail' },
+      ],
+      correctOptionId: 'b',
+      explanation: 'The dome on its head was made of solid bone up to 25 centimetres thick — that is almost as thick as your arm is long!',
+      explanationNarration: { locale: 'en-US', script: 'The dome on its head was made of solid bone up to 25 centimetres thick — that is almost as thick as your arm is long!' },
+    },
+    {
+      id: 'pachycephalosaurus-q2',
+      topicId: 'topic-dinosaurs',
+      question: 'Why did Pachycephalosaurus headbutt rivals?',
+      narration: { locale: 'en-US', script: 'Why did Pachycephalosaurus headbutt rivals?' },
+      options: [
+        { id: 'a', label: 'To scare away predators' },
+        { id: 'b', label: 'To find food underground' },
+        { id: 'c', label: 'To compete for mates, like bighorn sheep today' },
+      ],
+      correctOptionId: 'c',
+      explanation: 'Just like bighorn sheep crash their horns together today, Pachycephalosaurus would headbutt rivals to show who was strongest!',
+      explanationNarration: { locale: 'en-US', script: 'Just like bighorn sheep crash their horns together today, Pachycephalosaurus would headbutt rivals to show who was strongest!' },
+    },
+    {
+      id: 'pachycephalosaurus-q3',
+      topicId: 'topic-dinosaurs',
+      question: 'What does the name "Pachycephalosaurus" mean?',
+      narration: { locale: 'en-US', script: 'What does the name Pachycephalosaurus mean?' },
+      options: [
+        { id: 'a', label: 'Fast running lizard' },
+        { id: 'b', label: 'Thick-headed lizard' },
+        { id: 'c', label: 'Armoured lizard' },
+      ],
+      correctOptionId: 'b',
+      explanation: '"Pachy" means thick, "cephalo" means head — so Pachycephalosaurus literally means thick-headed lizard!',
+      explanationNarration: { locale: 'en-US', script: '"Pachy" means thick, "cephalo" means head — so Pachycephalosaurus literally means thick-headed lizard!' },
+    },
+  ],
+
+  'diplodocus': [
+    {
+      id: 'diplodocus-q1',
+      topicId: 'topic-dinosaurs',
+      question: "What could Diplodocus do with its enormous tail?",
+      narration: { locale: 'en-US', script: "What could Diplodocus do with its enormous tail?" },
+      options: [
+        { id: 'a', label: 'Sting like a scorpion' },
+        { id: 'b', label: 'Crack it like a whip to make a sonic boom' },
+        { id: 'c', label: 'Hold onto tree branches' },
+      ],
+      correctOptionId: 'b',
+      explanation: "Diplodocus's tail was up to 14 metres long and scientists think it cracked like a whip — making a boom louder than a thunderclap!",
+      explanationNarration: { locale: 'en-US', script: "Diplodocus's tail was up to 14 metres long and scientists think it cracked like a whip — making a boom louder than a thunderclap!" },
+    },
+    {
+      id: 'diplodocus-q2',
+      topicId: 'topic-dinosaurs',
+      question: 'What did Diplodocus eat?',
+      narration: { locale: 'en-US', script: 'What did Diplodocus eat?' },
+      options: [
+        { id: 'a', label: 'Other dinosaurs' },
+        { id: 'b', label: 'Fish' },
+        { id: 'c', label: 'Plants' },
+      ],
+      correctOptionId: 'c',
+      explanation: 'Despite being enormous, Diplodocus was a gentle giant that only ate plants — it needed to munch all day to fuel that huge body!',
+      explanationNarration: { locale: 'en-US', script: 'Despite being enormous, Diplodocus was a gentle giant that only ate plants — it needed to munch all day to fuel that huge body!' },
+    },
+    {
+      id: 'diplodocus-q3',
+      topicId: 'topic-dinosaurs',
+      question: 'How is Diplodocus different from Brachiosaurus?',
+      narration: { locale: 'en-US', script: 'How is Diplodocus different from Brachiosaurus?' },
+      options: [
+        { id: 'a', label: 'Diplodocus was much longer but held its neck lower' },
+        { id: 'b', label: 'Diplodocus was much shorter' },
+        { id: 'c', label: 'They looked exactly the same' },
+      ],
+      correctOptionId: 'a',
+      explanation: 'Diplodocus was even longer than Brachiosaurus but held its neck out horizontally rather than reaching up — like two different kinds of giant!',
+      explanationNarration: { locale: 'en-US', script: 'Diplodocus was even longer than Brachiosaurus but held its neck out horizontally rather than reaching up — like two different kinds of giant!' },
     },
   ],
 

@@ -9,14 +9,21 @@ const CONFIGS: Record<string, Config> = {
   't-rex':         { objEmoji: '🏠', objLabel: 'House',        dinoFrac: 0.90, objFrac: 1.00 },
   'brachiosaurus': { objEmoji: '🏢', objLabel: 'Building',    dinoFrac: 1.00, objFrac: 0.90 },
   'triceratops':   { objEmoji: '🚛', objLabel: 'Pickup Truck', dinoFrac: 1.00, objFrac: 0.61 },
-  'stegosaurus':   { objEmoji: '🚌', objLabel: 'School Bus',   dinoFrac: 1.00, objFrac: 0.80 },
-  'velociraptor':  { objEmoji: '🧑', objLabel: 'Person',      dinoFrac: 0.29, objFrac: 1.00 },
-  'pteranodon':    { objEmoji: '🚗', objLabel: 'Car',          dinoFrac: 1.00, objFrac: 0.60 },
+  'stegosaurus':        { objEmoji: '🚌', objLabel: 'School Bus',   dinoFrac: 1.00, objFrac: 0.80 },
+  'velociraptor':       { objEmoji: '🧑', objLabel: 'Person',      dinoFrac: 0.29, objFrac: 1.00 },
+  'pteranodon':         { objEmoji: '🚗', objLabel: 'Car',          dinoFrac: 1.00, objFrac: 0.60 },
+  'spinosaurus':        { objEmoji: '🚌', objLabel: 'School Bus',   dinoFrac: 1.00, objFrac: 0.70 },
+  'ankylosaurus':       { objEmoji: '🚛', objLabel: 'Pickup Truck', dinoFrac: 1.00, objFrac: 0.85 },
+  'parasaurolophus':    { objEmoji: '🚌', objLabel: 'School Bus',   dinoFrac: 0.85, objFrac: 1.00 },
+  'pachycephalosaurus': { objEmoji: '🚗', objLabel: 'Car',          dinoFrac: 1.00, objFrac: 0.80 },
+  'diplodocus':         { objEmoji: '🚌', objLabel: 'School Bus',   dinoFrac: 1.00, objFrac: 0.33 },
 };
 
 const DINO_EMOJIS: Record<string, string> = {
   't-rex': '🦖', 'triceratops': '🦕', 'stegosaurus': '🦕',
   'velociraptor': '🦖', 'brachiosaurus': '🦕', 'pteranodon': '🦅',
+  'spinosaurus': '🦖', 'ankylosaurus': '🦕', 'parasaurolophus': '🦕',
+  'pachycephalosaurus': '🦕', 'diplodocus': '🦕',
 };
 
 interface SizeComparisonProps {

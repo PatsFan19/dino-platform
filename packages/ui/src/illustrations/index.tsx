@@ -11,8 +11,13 @@ const DINO_MAP: Record<string, { emoji: string; bg: string }> = {
   'dinosaurs/triceratops':   { emoji: '🦕', bg: '#3B82F6' },
   'dinosaurs/stegosaurus':   { emoji: '🦕', bg: '#22C55E' },
   'dinosaurs/velociraptor':  { emoji: '🦖', bg: '#F97316' },
-  'dinosaurs/brachiosaurus': { emoji: '🦕', bg: '#A855F7' },
-  'dinosaurs/pteranodon':    { emoji: '🦅', bg: '#14B8A6' },
+  'dinosaurs/brachiosaurus':     { emoji: '🦕', bg: '#A855F7' },
+  'dinosaurs/pteranodon':        { emoji: '🦅', bg: '#14B8A6' },
+  'dinosaurs/spinosaurus':       { emoji: '🦖', bg: '#0369A1' },
+  'dinosaurs/ankylosaurus':      { emoji: '🦕', bg: '#854D0E' },
+  'dinosaurs/parasaurolophus':   { emoji: '🦕', bg: '#BE185D' },
+  'dinosaurs/pachycephalosaurus':{ emoji: '🦕', bg: '#065F46' },
+  'dinosaurs/diplodocus':        { emoji: '🦕', bg: '#7C3AED' },
 };
 
 export function DinoIllustration({ imageKey, width = 200, height = 160 }: DinoIllustrationProps) {
