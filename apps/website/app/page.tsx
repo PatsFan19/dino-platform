@@ -93,6 +93,9 @@ export default function HomePage() {
       <section className={s.ctaSection}>
         <h2 className={s.ctaHeading}>Ready to explore?</h2>
         <p className={s.ctaSubtext}>Dino World is coming soon to the App Store and Google Play.</p>
+        <a href="https://dino-platform-website.vercel.app" className={s.tryWebBtn}>
+          🦕 Try the web app — free, no download
+        </a>
         <div className={s.ctaStores}>
           <StoreBadge emoji="🍎" label="App Store" sub="Download on the" />
           <StoreBadge emoji="▶️" label="Google Play" sub="Get it on" />
