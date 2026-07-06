@@ -6,24 +6,35 @@ const MAX_BOX_H = 100; // tallest box height in pts
 interface Config { objEmoji: string; objLabel: string; dinoFrac: number; objFrac: number; }
 
 const CONFIGS: Record<string, Config> = {
-  't-rex':         { objEmoji: '🏠', objLabel: 'House',        dinoFrac: 0.90, objFrac: 1.00 },
-  'brachiosaurus': { objEmoji: '🏢', objLabel: 'Building',    dinoFrac: 1.00, objFrac: 0.90 },
-  'triceratops':   { objEmoji: '🚛', objLabel: 'Pickup Truck', dinoFrac: 1.00, objFrac: 0.61 },
+  't-rex':              { objEmoji: '🏠', objLabel: 'House',        dinoFrac: 0.90, objFrac: 1.00 },
+  'brachiosaurus':      { objEmoji: '🏢', objLabel: 'Building',     dinoFrac: 1.00, objFrac: 0.90 },
+  'triceratops':        { objEmoji: '🚛', objLabel: 'Pickup Truck', dinoFrac: 1.00, objFrac: 0.61 },
   'stegosaurus':        { objEmoji: '🚌', objLabel: 'School Bus',   dinoFrac: 1.00, objFrac: 0.80 },
-  'velociraptor':       { objEmoji: '🧑', objLabel: 'Person',      dinoFrac: 0.29, objFrac: 1.00 },
+  'velociraptor':       { objEmoji: '🧑', objLabel: 'Person',       dinoFrac: 0.29, objFrac: 1.00 },
   'pteranodon':         { objEmoji: '🚗', objLabel: 'Car',          dinoFrac: 1.00, objFrac: 0.60 },
   'spinosaurus':        { objEmoji: '🚌', objLabel: 'School Bus',   dinoFrac: 1.00, objFrac: 0.70 },
   'ankylosaurus':       { objEmoji: '🚛', objLabel: 'Pickup Truck', dinoFrac: 1.00, objFrac: 0.85 },
   'parasaurolophus':    { objEmoji: '🚌', objLabel: 'School Bus',   dinoFrac: 0.85, objFrac: 1.00 },
   'pachycephalosaurus': { objEmoji: '🚗', objLabel: 'Car',          dinoFrac: 1.00, objFrac: 0.80 },
   'diplodocus':         { objEmoji: '🚌', objLabel: 'School Bus',   dinoFrac: 1.00, objFrac: 0.33 },
+  'coelophysis':        { objEmoji: '🧑', objLabel: 'Person',       dinoFrac: 0.45, objFrac: 1.00 },
+  'plateosaurus':       { objEmoji: '🚐', objLabel: 'Large Van',    dinoFrac: 1.00, objFrac: 0.90 },
 };
 
 const DINO_EMOJIS: Record<string, string> = {
-  't-rex': '🦖', 'triceratops': '🦕', 'stegosaurus': '🦕',
-  'velociraptor': '🦖', 'brachiosaurus': '🦕', 'pteranodon': '🦅',
-  'spinosaurus': '🦖', 'ankylosaurus': '🦕', 'parasaurolophus': '🦕',
-  'pachycephalosaurus': '🦕', 'diplodocus': '🦕',
+  't-rex':              '🦖',
+  'triceratops':        '🦏', // rhino — closest to 3-horned herbivore
+  'stegosaurus':        '🐊', // low-profile armoured profile
+  'velociraptor':       '🦖',
+  'brachiosaurus':      '🦒', // long-neck herbivore
+  'pteranodon':         '🦅',
+  'spinosaurus':        '🦖',
+  'ankylosaurus':       '🐢', // armoured, wide, low
+  'parasaurolophus':    '🦆', // duck-billed crest
+  'pachycephalosaurus': '🐏', // dome-headed headbutter (like bighorn sheep)
+  'diplodocus':         '🐍', // very long body, horizontal
+  'coelophysis':        '🦎',
+  'plateosaurus':       '🦕',
 };
 
 interface SizeComparisonProps {

@@ -3,7 +3,10 @@
   "compilerOptions": {
     "module": "ESNext",
     "outDir": "./dist",
-    "rootDir": "./src"
+    "rootDir": "./src",
+    "paths": {
+      "react-native-svg": ["../../apps/dino-app/node_modules/react-native-svg"]
+    }
   },
   "include": ["src"]
 }

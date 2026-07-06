@@ -23,7 +23,13 @@
     },
     "web": {
       "bundler": "metro",
-      "output": "static"
+      "output": "static",
+      "name": "Dino Explorer — Learn About Dinosaurs!",
+      "shortName": "Dino Explorer",
+      "description": "Discover amazing dinosaurs! Learn fun facts, take quizzes, and dig for fossils. Free, safe, and ad-free for kids ages 4–9.",
+      "themeColor": "#1A8C4E",
+      "backgroundColor": "#FFFDF5",
+      "favicon": "./assets/favicon.svg"
     },
     "plugins": [
       "expo-router",

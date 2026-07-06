@@ -138,6 +138,32 @@ export const DINOSAURS: TopicEntry[] = [
     sizeComparison: 'as long as three school buses end to end',
     imageKey: 'dinosaurs/diplodocus',
   },
+  {
+    id: 'coelophysis',
+    name: 'Coelophysis',
+    pronunciation: 'SEE-loh-FY-sis',
+    category: 'Triassic',
+    kidFact:
+      'Coelophysis is one of the oldest dinosaurs we know about, roaming the Earth over ' +
+      '228 million years ago — long before even T. Rex existed! It was light and speedy, ' +
+      'about the size of a large dog, and may have run in packs to catch small lizards and ' +
+      'insects, just like wolves work together today.',
+    sizeComparison: 'about the same size as a large dog',
+    imageKey: 'dinosaurs/coelophysis',
+  },
+  {
+    id: 'plateosaurus',
+    name: 'Plateosaurus',
+    pronunciation: 'PLAT-ee-oh-SOR-us',
+    category: 'Triassic',
+    kidFact:
+      'Plateosaurus was one of the very first truly giant dinosaurs — a gentle plant-eater ' +
+      'that could walk on two legs OR four legs depending on what it was doing! With its ' +
+      'long flexible neck it could reach leaves high in the trees. Hundreds of Plateosaurus ' +
+      'skeletons have been found together, which means they may have travelled in enormous herds.',
+    sizeComparison: 'as long as a large van',
+    imageKey: 'dinosaurs/plateosaurus',
+  },
 ];
 
 export const DINO_QUIZ_MAP: Record<string, QuizQuestion[]> = {
@@ -648,6 +674,120 @@ export const DINO_QUIZ_MAP: Record<string, QuizQuestion[]> = {
       correctOptionId: 'a',
       explanation: 'Diplodocus was even longer than Brachiosaurus but held its neck out horizontally rather than reaching up — like two different kinds of giant!',
       explanationNarration: { locale: 'en-US', script: 'Diplodocus was even longer than Brachiosaurus but held its neck out horizontally rather than reaching up — like two different kinds of giant!' },
+    },
+  ],
+
+  'coelophysis': [
+    {
+      id: 'coelophysis-q1',
+      topicId: 'topic-dinosaurs',
+      question: 'How long ago did Coelophysis live?',
+      narration: { locale: 'en-US', script: 'How long ago did Coelophysis live?' },
+      options: [
+        { id: 'a', label: 'About 65 million years ago' },
+        { id: 'b', label: 'About 228 million years ago' },
+        { id: 'c', label: 'About 10 million years ago' },
+      ],
+      correctOptionId: 'b',
+      explanation:
+        'Coelophysis is one of the oldest known dinosaurs, living over 228 million years ago during the Triassic period — long before T. Rex!',
+      explanationNarration: {
+        locale: 'en-US',
+        script: 'Coelophysis is one of the oldest known dinosaurs, living over 228 million years ago during the Triassic period — long before T. Rex!',
+      },
+    },
+    {
+      id: 'coelophysis-q2',
+      topicId: 'topic-dinosaurs',
+      question: 'How big was a Coelophysis?',
+      narration: { locale: 'en-US', script: 'How big was a Coelophysis?' },
+      options: [
+        { id: 'a', label: 'As big as a T. Rex' },
+        { id: 'b', label: 'As big as a school bus' },
+        { id: 'c', label: 'About the size of a large dog' },
+      ],
+      correctOptionId: 'c',
+      explanation:
+        'Coelophysis was small and lightweight — only about the size of a large dog! Its light hollow bones made it very fast.',
+      explanationNarration: {
+        locale: 'en-US',
+        script: 'Coelophysis was small and lightweight — only about the size of a large dog! Its light hollow bones made it very fast.',
+      },
+    },
+    {
+      id: 'coelophysis-q3',
+      topicId: 'topic-dinosaurs',
+      question: 'What did Coelophysis eat?',
+      narration: { locale: 'en-US', script: 'What did Coelophysis eat?' },
+      options: [
+        { id: 'a', label: 'Plants and leaves' },
+        { id: 'b', label: 'Small animals like lizards and insects' },
+        { id: 'c', label: 'Fish from the ocean' },
+      ],
+      correctOptionId: 'b',
+      explanation:
+        'Coelophysis was a carnivore — a meat eater! Its sharp teeth were perfect for snapping up small lizards and insects.',
+      explanationNarration: {
+        locale: 'en-US',
+        script: 'Coelophysis was a carnivore — a meat eater! Its sharp teeth were perfect for snapping up small lizards and insects.',
+      },
+    },
+  ],
+
+  'plateosaurus': [
+    {
+      id: 'plateosaurus-q1',
+      topicId: 'topic-dinosaurs',
+      question: 'What could Plateosaurus do with its legs that was special?',
+      narration: { locale: 'en-US', script: 'What could Plateosaurus do with its legs that was special?' },
+      options: [
+        { id: 'a', label: 'It could only walk on four legs' },
+        { id: 'b', label: 'It could walk on two legs OR four legs' },
+        { id: 'c', label: 'It could only hop like a kangaroo' },
+      ],
+      correctOptionId: 'b',
+      explanation:
+        'Plateosaurus could switch between walking on two legs and four legs — very handy for reaching high leaves or moving quickly!',
+      explanationNarration: {
+        locale: 'en-US',
+        script: 'Plateosaurus could switch between walking on two legs and four legs — very handy for reaching high leaves or moving quickly!',
+      },
+    },
+    {
+      id: 'plateosaurus-q2',
+      topicId: 'topic-dinosaurs',
+      question: 'Was Plateosaurus a meat-eater or a plant-eater?',
+      narration: { locale: 'en-US', script: 'Was Plateosaurus a meat-eater or a plant-eater?' },
+      options: [
+        { id: 'a', label: 'A meat-eater' },
+        { id: 'b', label: 'A plant-eater' },
+        { id: 'c', label: 'It ate both plants and meat' },
+      ],
+      correctOptionId: 'b',
+      explanation:
+        'Plateosaurus was a herbivore — a plant-eater! Its long neck helped it reach leaves in tall trees that smaller dinosaurs could not touch.',
+      explanationNarration: {
+        locale: 'en-US',
+        script: 'Plateosaurus was a herbivore — a plant-eater! Its long neck helped it reach leaves in tall trees that smaller dinosaurs could not touch.',
+      },
+    },
+    {
+      id: 'plateosaurus-q3',
+      topicId: 'topic-dinosaurs',
+      question: 'What does the name "Plateosaurus" mean?',
+      narration: { locale: 'en-US', script: 'What does the name Plateosaurus mean?' },
+      options: [
+        { id: 'a', label: 'Fast lizard' },
+        { id: 'b', label: 'Armoured lizard' },
+        { id: 'c', label: 'Broad lizard' },
+      ],
+      correctOptionId: 'c',
+      explanation:
+        '"Plateo" means broad or flat — so Plateosaurus means "broad lizard." Scientists named it this because of its wide, flat teeth, perfect for chomping plants!',
+      explanationNarration: {
+        locale: 'en-US',
+        script: '"Plateo" means broad or flat — so Plateosaurus means "broad lizard." Scientists named it this because of its wide, flat teeth, perfect for chomping plants!',
+      },
     },
   ],
 

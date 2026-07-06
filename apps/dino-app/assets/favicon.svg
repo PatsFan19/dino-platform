@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- Dinosaur footprint (three-toed track) -->
+  <!-- Center toe -->
+  <ellipse cx="16" cy="11" rx="3" ry="5" fill="#1A8C4E"/>
+  <!-- Left toe -->
+  <ellipse cx="9" cy="14" rx="2.5" ry="4.5" fill="#1A8C4E" transform="rotate(-30 9 14)"/>
+  <!-- Right toe -->
+  <ellipse cx="23" cy="14" rx="2.5" ry="4.5" fill="#1A8C4E" transform="rotate(30 23 14)"/>
+  <!-- Heel pad -->
+  <ellipse cx="16" cy="24" rx="5.5" ry="4" fill="#1A8C4E"/>
+</svg>

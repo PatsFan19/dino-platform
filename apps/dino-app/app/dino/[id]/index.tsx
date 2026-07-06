@@ -63,7 +63,7 @@ export default function DinoDetailScreen() {
           accessibilityRole="image"
           accessibilityLabel={`Illustration of ${dino.name}`}
         >
-          <DinoIllustration imageKey={dino.imageKey} width={screenWidth} height={220} />
+          <DinoIllustration imageKey={dino.imageKey} width={screenWidth} height={220} color={color} />
         </View>
 
         {/* Identity block */}
