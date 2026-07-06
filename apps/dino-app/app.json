@@ -29,7 +29,7 @@
       "description": "Discover amazing dinosaurs! Learn fun facts, take quizzes, and dig for fossils. Free, safe, and ad-free for kids ages 4–9.",
       "themeColor": "#1A8C4E",
       "backgroundColor": "#FFFDF5",
-      "favicon": "./assets/favicon.svg"
+      "favicon": "./assets/favicon.png"
     },
     "plugins": [
       "expo-router",
