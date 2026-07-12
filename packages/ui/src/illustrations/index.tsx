@@ -1,27 +1,25 @@
 import { StyleSheet, View } from 'react-native';
-import { TRexSVG } from './TRex';
-import { TriceratopsSVG } from './Triceratops';
-import { StegosaurusSVG } from './Stegosaurus';
-import { VelociraptorSVG } from './Velociraptor';
-import { BrachiosaurusSVG } from './Brachiosaurus';
-import { PteranodonSVG } from './Pteranodon';
-import { SpinosaurusSVG } from './Spinosaurus';
-import { AnkylosaurusSVG } from './Ankylosaurus';
-import { ParasaurolophsusSVG } from './Parasaurolophus';
-import { PachycephalosaurusSVG } from './Pachycephalosaurus';
-import { DiplodocusSVG } from './Diplodocus';
-import { CoelophysisSVG } from './Coelophysis';
-import { PlateosaurusSVG } from './Plateosaurus';
+import TRexSVG from '../../assets/dinosaurs/selected/t-rex.svg';
+import TriceratopsSVG from '../../assets/dinosaurs/selected/triceratops.svg';
+import StegosaurusSVG from '../../assets/dinosaurs/selected/stegosaurus.svg';
+import VelociraptorSVG from '../../assets/dinosaurs/selected/velociraptor.svg';
+import BrachiosaurusSVG from '../../assets/dinosaurs/selected/brachiosaurus.svg';
+import PteranodonSVG from '../../assets/dinosaurs/selected/pteranodon.svg';
+import SpinosaurusSVG from '../../assets/dinosaurs/selected/spinosaurus.svg';
+import AnkylosaurusSVG from '../../assets/dinosaurs/selected/ankylosaurus.svg';
+import ParasaurolophusSVG from '../../assets/dinosaurs/selected/parasaurolophus.svg';
+import PachycephalosaurusSVG from '../../assets/dinosaurs/selected/pachycephalosaurus.svg';
+import DiplodocusSVG from '../../assets/dinosaurs/selected/diplodocus.svg';
+import CoelophysisSVG from '../../assets/dinosaurs/selected/coelophysis.svg';
+import PlateosaurusSVG from '../../assets/dinosaurs/selected/plateosaurus.svg';
 
 interface DinoIllustrationProps {
   imageKey: string;
   width?: number;
   height?: number;
-  /** Era color used as the dino fill — defaults to brand green. */
-  color?: string;
 }
 
-type SVGComponent = (props: { color: string; width: number; height: number }) => React.JSX.Element | null;
+type SVGComponent = React.ComponentType<{ width: number; height: number }>;
 
 const SVG_MAP: Record<string, SVGComponent> = {
   'dinosaurs/t-rex':              TRexSVG,
@@ -32,20 +30,17 @@ const SVG_MAP: Record<string, SVGComponent> = {
   'dinosaurs/pteranodon':         PteranodonSVG,
   'dinosaurs/spinosaurus':        SpinosaurusSVG,
   'dinosaurs/ankylosaurus':       AnkylosaurusSVG,
-  'dinosaurs/parasaurolophus':    ParasaurolophsusSVG,
+  'dinosaurs/parasaurolophus':    ParasaurolophusSVG,
   'dinosaurs/pachycephalosaurus': PachycephalosaurusSVG,
   'dinosaurs/diplodocus':         DiplodocusSVG,
   'dinosaurs/coelophysis':        CoelophysisSVG,
   'dinosaurs/plateosaurus':       PlateosaurusSVG,
 };
 
-const DEFAULT_COLOR = '#1A8C4E';
-
 export function DinoIllustration({
   imageKey,
   width = 200,
   height = 160,
-  color = DEFAULT_COLOR,
 }: DinoIllustrationProps) {
   const SVGComponent = SVG_MAP[imageKey];
   if (!SVGComponent) return null;
@@ -57,7 +52,7 @@ export function DinoIllustration({
       accessibilityRole="image"
       accessibilityLabel={`${imageKey.replace('dinosaurs/', '')} illustration`}
     >
-      <SVGComponent color={color} width={width} height={height} />
+      <SVGComponent width={width} height={height} />
     </View>
   );
 }

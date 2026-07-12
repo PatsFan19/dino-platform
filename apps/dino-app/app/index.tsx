@@ -46,7 +46,7 @@ function DinoCard({
       accessibilityLabel={`${entry.name}, ${entry.category} period. Tap to learn more.`}
     >
       <View style={[styles.imagePlaceholder, { backgroundColor: color + '18' }]}>
-        <DinoIllustration imageKey={entry.imageKey} width={width} height={100} color={color} />
+        <DinoIllustration imageKey={entry.imageKey} width={width} height={100} />
         <View style={styles.badgeContainer}>
           {result ? <ScoreBadge result={result} /> : null}
           {digDone ? (
