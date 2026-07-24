@@ -53,23 +53,23 @@ export default function DigScreen() {
   useEffect(() => {
     if (!loaded) return;
     if (isComplete) {
-      speak(`Amazing! You dug up the ${dino?.name} fossil! You are a real palaeontologist!`, { pitch: 1.2 });
+      speak(`You found it! You uncovered the whole ${dino?.name} fossil. You're a real paleontologist!`, { pitch: 1.2 });
     } else {
-      speak('Tap the dirt squares to find the hidden fossil!', { rate: 0.9 });
+      speak('Time to dig! Tap the dirt squares to uncover the fossil hiding underneath.', { rate: 0.9 });
     }
   }, [loaded]);
 
   // Celebrate when the last tile is revealed during this session
   useEffect(() => {
     if (!loaded || !isComplete) return;
-    speak(`You found it! The ${dino?.name}!`, { pitch: 1.3 });
+    speak(`You found the ${dino?.name}! Amazing digging!`, { pitch: 1.3 });
   }, [isComplete]);
 
   if (!dino) {
     return (
       <View style={styles.notFound}>
         <Stack.Screen options={{ title: 'Fossil Dig' }} />
-        <Text style={styles.notFoundText}>Dinosaur not found!</Text>
+        <Text style={styles.notFoundText}>Oops! We can't find that dinosaur.</Text>
       </View>
     );
   }
@@ -104,7 +104,7 @@ export default function DigScreen() {
           </Text>
 
           <Text style={styles.celebrateBody}>
-            You are a real palaeontologist!
+            You're a real paleontologist! Amazing work!
           </Text>
 
           <View style={styles.celebrateButtons}>
@@ -152,7 +152,7 @@ export default function DigScreen() {
         }}
       />
       <ScrollView style={styles.scroll} contentContainerStyle={styles.container}>
-        <Text style={styles.instruction}>Tap the dirt to find the fossil!</Text>
+        <Text style={styles.instruction}>Tap the dirt squares to uncover the fossil!</Text>
 
         {/* Progress bar */}
         <View style={styles.progressRow} accessibilityRole="progressbar" accessibilityValue={{ min: 0, max: TOTAL, now: revealedCount }}>
@@ -195,12 +195,12 @@ export default function DigScreen() {
 
         <Text style={styles.hintText}>
           {revealedCount === 0
-            ? 'Tap any square to start digging!'
+            ? 'Tap a square to start digging!'
             : revealedCount < TOTAL / 2
-            ? 'Keep going — the fossil is in there!'
+            ? "Keep digging — something's down there!"
             : revealedCount < TOTAL - 3
-            ? "Almost there — you're doing great!"
-            : 'Just a few more tiles!'}
+            ? 'Almost there! Can you tell which dinosaur it is?'
+            : 'Just a few more squares to go!'}
         </Text>
       </ScrollView>
     </>

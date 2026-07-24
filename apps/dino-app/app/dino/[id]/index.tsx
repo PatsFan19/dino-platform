@@ -18,7 +18,7 @@ export default function DinoDetailScreen() {
   if (!dino) {
     return (
       <View style={styles.notFound}>
-        <Text style={styles.notFoundText}>Dinosaur not found!</Text>
+        <Text style={styles.notFoundText}>Oops! We can't find that dinosaur.</Text>
       </View>
     );
   }
@@ -37,7 +37,7 @@ export default function DinoDetailScreen() {
     } else {
       setIsSpeaking(true);
       speak(
-        `${dino!.name}. ${dino!.kidFact}. How big was it? ${dino!.sizeComparison}.`,
+        `${dino!.name}. ${dino!.kidFact}. How big is it? ${dino!.sizeComparison}.`,
         {
           onDone: () => setIsSpeaking(false),
           onStopped: () => setIsSpeaking(false),
@@ -96,7 +96,7 @@ export default function DinoDetailScreen() {
         {/* Fact */}
         <View style={styles.section}>
           <View style={styles.sectionHeader}>
-            <Text style={styles.sectionHeading}>Did you know?</Text>
+            <Text style={styles.sectionHeading}>Guess what?</Text>
             <Pressable
               onPress={handleListen}
               style={({ pressed }) => [
@@ -118,7 +118,7 @@ export default function DinoDetailScreen() {
 
         {/* Size comparison — visual + caption */}
         <View style={[styles.section, styles.sizeSection]}>
-          <Text style={styles.sectionHeading}>How big was it?</Text>
+          <Text style={styles.sectionHeading}>How big is it?</Text>
           <SizeComparison dinoId={dino.id} dinoName={dino.name} color={color} />
           <Text style={styles.sizeCaption}>{dino.sizeComparison}</Text>
         </View>
@@ -135,7 +135,7 @@ export default function DinoDetailScreen() {
             accessibilityRole="button"
             accessibilityLabel={`Take the ${dino.name} quiz`}
           >
-            <Text style={styles.quizButtonText}>Take the Quiz!</Text>
+            <Text style={styles.quizButtonText}>Let's play a quiz!</Text>
           </Pressable>
 
           <Pressable
@@ -148,7 +148,7 @@ export default function DinoDetailScreen() {
             accessibilityRole="button"
             accessibilityLabel={`Dig for the ${dino.name} fossil`}
           >
-            <Text style={[styles.quizButtonText, styles.digButtonText]}>Dig for Fossils!</Text>
+            <Text style={[styles.quizButtonText, styles.digButtonText]}>Let's dig for fossils!</Text>
           </Pressable>
         </View>
       </ScrollView>

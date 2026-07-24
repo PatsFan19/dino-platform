@@ -7,10 +7,11 @@ export const DINOSAURS: TopicEntry[] = [
     pronunciation: 'tie-RAN-oh-SOR-us REX',
     category: 'Cretaceous',
     kidFact:
-      'T. Rex had a bite stronger than any animal alive today — powerful enough to ' +
-      'crunch straight through solid bone! Those tiny arms look funny, but T. Rex ' +
-      "didn't need them: its huge jaws did all the work.",
-    sizeComparison: 'as tall as a two-story house',
+      'Meet the mighty T-Rex! It had one of the strongest bites of any animal ever — ' +
+      'strong enough to crunch right through bone. Its arms look tiny and a little funny, ' +
+      "but T-Rex didn't need them. Those powerful jaws did all the work. " +
+      'Ready? Give us your biggest dinosaur ROAR!',
+    sizeComparison: 'As tall as a two-story house!',
     imageKey: 'dinosaurs/t-rex',
   },
   {
@@ -19,10 +20,10 @@ export const DINOSAURS: TopicEntry[] = [
     pronunciation: 'try-SAIR-ah-tops',
     category: 'Cretaceous',
     kidFact:
-      'Triceratops had three enormous horns — two above its eyes and one on its nose — ' +
-      'and a huge bony frill around its neck like a built-in shield. ' +
-      'Scientists think the frill could flush with colour when Triceratops was showing off!',
-    sizeComparison: 'as long as a large pickup truck',
+      'This is Triceratops, and its name means "three-horned face." Can you spot all three horns? ' +
+      'The big bony frill behind its head worked like a shield to keep it safe. ' +
+      'Triceratops was a plant-eater — it spent all day snipping ferns and leaves with its beak. Crunch!',
+    sizeComparison: 'As long as a big pickup truck!',
     imageKey: 'dinosaurs/triceratops',
   },
   {
@@ -31,10 +32,11 @@ export const DINOSAURS: TopicEntry[] = [
     pronunciation: 'steg-oh-SOR-us',
     category: 'Jurassic',
     kidFact:
-      'Stegosaurus had two rows of tall bony plates running down its back like a spiky ' +
-      'mohawk! Its tail had four sharp spikes — palaeontologists call them the ' +
-      '"thagomizer" — which it swung at predators like a club.',
-    sizeComparison: 'as long as a school bus',
+      'Look at the big plates along Stegosaurus\'s back — they stood up in a row like a mountain range! ' +
+      'Scientists think the plates helped it warm up in the sun and cool down in the shade. ' +
+      'Its tail had four sharp spikes for protection. Swish! ' +
+      'Stegosaurus was a gentle plant-eater.',
+    sizeComparison: 'As long as a school bus!',
     imageKey: 'dinosaurs/stegosaurus',
   },
   {
@@ -43,10 +45,11 @@ export const DINOSAURS: TopicEntry[] = [
     pronunciation: 'veh-LOSS-ih-rap-tor',
     category: 'Cretaceous',
     kidFact:
-      'Forget the movies — real Velociraptors were only about the size of a large turkey, ' +
-      'and they were covered in feathers! Each foot had a curved killing claw, and they ' +
-      'likely hunted together in packs, just like wolves do today.',
-    sizeComparison: 'about the size of a large turkey',
+      'Velociraptor was small, speedy, and smart. Here\'s a surprise: it was covered in feathers, ' +
+      'just like a bird! Its name means "speedy thief" because it could zoom after its dinner. ' +
+      'It was only about the size of a turkey — much smaller than in the movies. ' +
+      'Can you run in place as fast as a Velociraptor?',
+    sizeComparison: 'About the size of a big turkey!',
     imageKey: 'dinosaurs/velociraptor',
   },
   {
@@ -55,10 +58,11 @@ export const DINOSAURS: TopicEntry[] = [
     pronunciation: 'BRAK-ee-oh-SOR-us',
     category: 'Jurassic',
     kidFact:
-      'Brachiosaurus had a neck so long it could reach leaves at the very tops of trees ' +
-      'that no other dinosaur could touch — like the ultimate giraffe! ' +
-      'It needed to eat roughly 400 kg of plants every single day just to stay full.',
-    sizeComparison: 'as tall as a four-story building',
+      'Look way, way up — that\'s where Brachiosaurus kept its head! ' +
+      'Its neck was so long it could reach leaves at the very top of the tallest trees, ' +
+      'where no other dinosaur could reach. It ate plants all day long to fill up that giant body. ' +
+      'Stretch your arms up as high as you can — that\'s how Brachiosaurus reached its lunch!',
+    sizeComparison: 'As tall as a four-story building!',
     imageKey: 'dinosaurs/brachiosaurus',
   },
   {
@@ -67,10 +71,11 @@ export const DINOSAURS: TopicEntry[] = [
     pronunciation: 'teh-RAN-oh-don',
     category: 'Cretaceous',
     kidFact:
-      "Pteranodon wasn't actually a dinosaur — it was a flying reptile called a pterosaur! " +
-      'Its wings were made of stretchy skin attached to one super-long finger on each hand. ' +
-      'It soared over ancient seas and swooped down to snatch fish, just like a pelican.',
-    sizeComparison: 'wingspan as wide as a small car is long',
+      'Pteranodon soared through the sky on wings wider than a car! ' +
+      "Here's a fun secret: it wasn't actually a dinosaur — it was a flying reptile that lived " +
+      'alongside the dinosaurs. It glided over the ocean and swooped down to scoop up fish, ' +
+      'a bit like a pelican does today. Spread your arms and glide!',
+    sizeComparison: 'Its wings stretched as long as a small car!',
     imageKey: 'dinosaurs/pteranodon',
   },
   {
@@ -79,11 +84,11 @@ export const DINOSAURS: TopicEntry[] = [
     pronunciation: 'SPY-noh-SOR-us',
     category: 'Cretaceous',
     kidFact:
-      'Spinosaurus was the largest meat-eating dinosaur ever discovered — even bigger than ' +
-      'T. Rex! It had a giant sail on its back made of long spines, which may have helped ' +
-      'it stay cool or impress friends. Scientists think it was an expert fisher that waded ' +
-      'into rivers to catch enormous fish with its crocodile-like snout.',
-    sizeComparison: 'longer than a school bus',
+      'Spinosaurus had a tall sail on its back — you can spot one from far away! ' +
+      'It was even bigger than T-Rex, and it loved the water. ' +
+      'It waded and splashed in rivers, catching big fish with its long, crocodile-like snout. ' +
+      'A swimming dinosaur — how amazing is that?',
+    sizeComparison: 'Even longer than a school bus!',
     imageKey: 'dinosaurs/spinosaurus',
   },
   {
@@ -92,11 +97,10 @@ export const DINOSAURS: TopicEntry[] = [
     pronunciation: 'an-KY-loh-SOR-us',
     category: 'Cretaceous',
     kidFact:
-      'Ankylosaurus was built like a living tank — its back was covered in thick bony ' +
-      'armour, and spikes stuck out from its sides. Its most fearsome feature was the ' +
-      'enormous bony club on the end of its tail, which could swing with enough force ' +
-      'to shatter bones. Even T. Rex would think twice before picking a fight!',
-    sizeComparison: 'as long as a large pickup truck',
+      'Ankylosaurus was built like a tank! Thick, bumpy armor covered its whole back, ' +
+      'so even big meat-eaters left it alone. At the end of its tail was a heavy club of bone ' +
+      'that it could swing to protect itself. Under all that armor, it was a peaceful plant-eater.',
+    sizeComparison: 'As long as a big pickup truck!',
     imageKey: 'dinosaurs/ankylosaurus',
   },
   {
@@ -105,11 +109,10 @@ export const DINOSAURS: TopicEntry[] = [
     pronunciation: 'par-ah-SOR-oh-LOH-fus',
     category: 'Cretaceous',
     kidFact:
-      'Parasaurolophus had a long, curved hollow tube on top of its head — like a ' +
-      'built-in musical instrument! By blowing air through the tube, it could make a ' +
-      'deep, booming call to communicate with its herd from far away. Scientists built ' +
-      'a model of the crest and played it — it sounded just like a low trombone!',
-    sizeComparison: 'about the same length as a school bus',
+      'See the long, curved tube on Parasaurolophus\'s head? It worked like a built-in trumpet! ' +
+      'When it blew air through the tube, it made a deep, booming call that its friends could hear ' +
+      'from far away. Take a big breath and make your deepest HOOONK!',
+    sizeComparison: 'About as long as a school bus!',
     imageKey: 'dinosaurs/parasaurolophus',
   },
   {
@@ -118,11 +121,11 @@ export const DINOSAURS: TopicEntry[] = [
     pronunciation: 'pak-ee-SEF-ah-loh-SOR-us',
     category: 'Cretaceous',
     kidFact:
-      'Pachycephalosaurus had a dome of solid bone on top of its head up to 25 centimetres ' +
-      'thick — almost as thick as your arm is long! Males would charge at each other and ' +
-      'crash their domed heads together to compete, just like bighorn sheep do today. ' +
-      'Its name literally means "thick-headed lizard"!',
-    sizeComparison: 'about the length of a large car',
+      'Pachycephalosaurus has a very long name — and a very hard head! ' +
+      'The top of its skull was a thick bony dome, almost ten times thicker than yours. ' +
+      'Scientists think these dinosaurs bonked heads with each other, ' +
+      'the way bighorn sheep do today. What a headbanger!',
+    sizeComparison: 'About the size of a big car!',
     imageKey: 'dinosaurs/pachycephalosaurus',
   },
   {
@@ -131,11 +134,11 @@ export const DINOSAURS: TopicEntry[] = [
     pronunciation: 'dip-LOD-oh-kus',
     category: 'Jurassic',
     kidFact:
-      'Diplodocus had one of the longest tails of any animal that ever lived — up to ' +
-      '14 metres! Scientists think it could crack its tail like a whip, creating a sonic ' +
-      'boom louder than a thunderclap. Despite being one of the longest animals ever, ' +
-      'its head was tiny and it spent its days peacefully munching plants.',
-    sizeComparison: 'as long as three school buses end to end',
+      'Diplodocus was one of the longest animals to ever walk the Earth — ' +
+      'as long as three school buses lined up! Its whip-like tail could crack through the air ' +
+      'with a mighty SNAP. For such a giant body, it had a surprisingly small head. ' +
+      'This gentle giant munched plants from morning to night.',
+    sizeComparison: 'As long as three school buses!',
     imageKey: 'dinosaurs/diplodocus',
   },
   {
@@ -144,11 +147,11 @@ export const DINOSAURS: TopicEntry[] = [
     pronunciation: 'SEE-loh-FY-sis',
     category: 'Triassic',
     kidFact:
-      'Coelophysis is one of the oldest dinosaurs we know about, roaming the Earth over ' +
-      '228 million years ago — long before even T. Rex existed! It was light and speedy, ' +
-      'about the size of a large dog, and may have run in packs to catch small lizards and ' +
-      'insects, just like wolves work together today.',
-    sizeComparison: 'about the same size as a large dog',
+      'Coelophysis is one of the very first dinosaurs — it lived over 200 million years ago, ' +
+      'long before T-Rex was born! It was light and quick, about the size of a big dog, ' +
+      'and it hunted in groups with its friends. ' +
+      'It zipped after lizards and bugs for its dinner. Zoom!',
+    sizeComparison: 'About the size of a big dog!',
     imageKey: 'dinosaurs/coelophysis',
   },
   {
@@ -157,11 +160,11 @@ export const DINOSAURS: TopicEntry[] = [
     pronunciation: 'PLAT-ee-oh-SOR-us',
     category: 'Triassic',
     kidFact:
-      'Plateosaurus was one of the very first truly giant dinosaurs — a gentle plant-eater ' +
-      'that could walk on two legs OR four legs depending on what it was doing! With its ' +
-      'long flexible neck it could reach leaves high in the trees. Hundreds of Plateosaurus ' +
-      'skeletons have been found together, which means they may have travelled in enormous herds.',
-    sizeComparison: 'as long as a large van',
+      'Plateosaurus had a clever trick: it could walk on four legs, ' +
+      'then stand up on two legs to reach leaves high in the trees! ' +
+      'It was one of the first really big plant-eating dinosaurs. ' +
+      'Can you stand up tall and reach for the highest leaf?',
+    sizeComparison: 'About as long as a big van!',
     imageKey: 'dinosaurs/plateosaurus',
   },
 ];
@@ -171,44 +174,44 @@ export const DINO_QUIZ_MAP: Record<string, QuizQuestion[]> = {
     {
       id: 't-rex-q1',
       topicId: 'topic-dinosaurs',
-      question: 'What did T. Rex like to eat?',
-      narration: { locale: 'en-US', script: 'What did T. Rex like to eat?' },
+      question: 'What did T-Rex eat?',
+      narration: { locale: 'en-US', script: 'What did T-Rex eat?' },
       options: [
         { id: 'a', label: 'Plants and leaves' },
-        { id: 'b', label: 'Meat from other dinosaurs' },
+        { id: 'b', label: 'Meat' },
         { id: 'c', label: 'Fish and berries' },
       ],
       correctOptionId: 'b',
       explanation:
-        'T. Rex was a carnivore — a meat eater! Its powerful jaws could crunch straight through bone.',
+        "That's right — T-Rex ate meat! Animals that eat meat are called carnivores. T-Rex was one of the biggest carnivores ever!",
       explanationNarration: {
         locale: 'en-US',
-        script: 'T. Rex was a carnivore — a meat eater! Its powerful jaws could crunch straight through bone.',
+        script: "That's right — T-Rex ate meat! Animals that eat meat are called carnivores. T-Rex was one of the biggest carnivores ever!",
       },
     },
     {
       id: 't-rex-q2',
       topicId: 'topic-dinosaurs',
-      question: "What was T. Rex's most powerful weapon?",
-      narration: { locale: 'en-US', script: "What was T. Rex's most powerful weapon?" },
+      question: "What was T-Rex's superpower?",
+      narration: { locale: 'en-US', script: "What was T-Rex's superpower?" },
       options: [
         { id: 'a', label: 'Its tiny arms' },
-        { id: 'b', label: 'Its giant jaws' },
-        { id: 'c', label: 'Its tail' },
+        { id: 'b', label: 'Its powerful bite' },
+        { id: 'c', label: 'Its long tail' },
       ],
       correctOptionId: 'b',
       explanation:
-        'T. Rex had one of the strongest bites of any animal that ever lived — even stronger than a crocodile!',
+        'Its powerful bite! T-Rex could bite harder than almost any animal that ever lived — strong enough to crunch through bone.',
       explanationNarration: {
         locale: 'en-US',
-        script: 'T. Rex had one of the strongest bites of any animal that ever lived — even stronger than a crocodile!',
+        script: 'Its powerful bite! T-Rex could bite harder than almost any animal that ever lived — strong enough to crunch through bone.',
       },
     },
     {
       id: 't-rex-q3',
       topicId: 'topic-dinosaurs',
-      question: 'How tall was a full-grown T. Rex?',
-      narration: { locale: 'en-US', script: 'How tall was a full-grown T. Rex?' },
+      question: 'How tall was a grown-up T-Rex?',
+      narration: { locale: 'en-US', script: 'How tall was a grown-up T-Rex?' },
       options: [
         { id: 'a', label: 'About as tall as a cat' },
         { id: 'b', label: 'As tall as a two-story house' },
@@ -216,10 +219,10 @@ export const DINO_QUIZ_MAP: Record<string, QuizQuestion[]> = {
       ],
       correctOptionId: 'b',
       explanation:
-        'A full-grown T. Rex stood about 6 metres tall — taller than most houses!',
+        'A grown-up T-Rex stood as tall as a two-story house. Imagine one looking in through an upstairs window!',
       explanationNarration: {
         locale: 'en-US',
-        script: 'A full-grown T. Rex stood about 6 metres tall — taller than most houses!',
+        script: 'A grown-up T-Rex stood as tall as a two-story house. Imagine one looking in through an upstairs window!',
       },
     },
   ],
@@ -237,17 +240,17 @@ export const DINO_QUIZ_MAP: Record<string, QuizQuestion[]> = {
       ],
       correctOptionId: 'c',
       explanation:
-        '"Tri" means three! Triceratops had two long horns above its eyes and one shorter horn on its nose.',
+        'Three horns — two long ones above its eyes and one short one on its nose. That\'s why its name means "three-horned face"!',
       explanationNarration: {
         locale: 'en-US',
-        script: '"Tri" means three! Triceratops had two long horns above its eyes and one shorter horn on its nose.',
+        script: 'Three horns — two long ones above its eyes and one short one on its nose. That\'s why its name means "three-horned face"!',
       },
     },
     {
       id: 'triceratops-q2',
       topicId: 'topic-dinosaurs',
-      question: "What was the big frill on Triceratops's neck for?",
-      narration: { locale: 'en-US', script: "What was the big frill on Triceratops's neck for?" },
+      question: 'What was the big frill for?',
+      narration: { locale: 'en-US', script: 'What was the big frill for?' },
       options: [
         { id: 'a', label: 'To store food' },
         { id: 'b', label: 'To fly through the air' },
@@ -255,10 +258,10 @@ export const DINO_QUIZ_MAP: Record<string, QuizQuestion[]> = {
       ],
       correctOptionId: 'c',
       explanation:
-        'The frill acted like a built-in shield to protect Triceratops, and it might have changed colour to communicate!',
+        'The frill worked like a shield to protect its neck — and scientists think it helped Triceratops show off to its friends, too!',
       explanationNarration: {
         locale: 'en-US',
-        script: 'The frill acted like a built-in shield to protect Triceratops, and it might have changed colour to communicate!',
+        script: 'The frill worked like a shield to protect its neck — and scientists think it helped Triceratops show off to its friends, too!',
       },
     },
     {
@@ -273,10 +276,10 @@ export const DINO_QUIZ_MAP: Record<string, QuizQuestion[]> = {
       ],
       correctOptionId: 'b',
       explanation:
-        'Triceratops was a herbivore — a plant eater! Its beak was perfect for snipping through tough plants.',
+        'Plants! Triceratops used its sharp beak like scissors to snip off ferns and leaves all day long.',
       explanationNarration: {
         locale: 'en-US',
-        script: 'Triceratops was a herbivore — a plant eater! Its beak was perfect for snipping through tough plants.',
+        script: 'Plants! Triceratops used its sharp beak like scissors to snip off ferns and leaves all day long.',
       },
     },
   ],
@@ -294,17 +297,17 @@ export const DINO_QUIZ_MAP: Record<string, QuizQuestion[]> = {
       ],
       correctOptionId: 'b',
       explanation:
-        'Scientists named the tail spikes "the thagomizer" — and Stegosaurus used them to defend against predators!',
+        "It's called a thagomizer — what a fun word! Stegosaurus swung those four sharp spikes to protect itself.",
       explanationNarration: {
         locale: 'en-US',
-        script: 'Scientists named the tail spikes "the thagomizer" — and Stegosaurus used them to defend against predators!',
+        script: "It's called a thagomizer — what a fun word! Stegosaurus swung those four sharp spikes to protect itself.",
       },
     },
     {
       id: 'stegosaurus-q2',
       topicId: 'topic-dinosaurs',
-      question: "What were the big plates on Stegosaurus's back for?",
-      narration: { locale: 'en-US', script: "What were the big plates on Stegosaurus's back for?" },
+      question: 'What were the big plates on its back for?',
+      narration: { locale: 'en-US', script: 'What were the big plates on its back for?' },
       options: [
         { id: 'a', label: 'For flying' },
         { id: 'b', label: 'To help warm up and cool down' },
@@ -312,17 +315,17 @@ export const DINO_QUIZ_MAP: Record<string, QuizQuestion[]> = {
       ],
       correctOptionId: 'b',
       explanation:
-        'The plates may have soaked up heat from the sun and released heat when Stegosaurus got too hot — like a built-in thermostat!',
+        'The plates helped Stegosaurus warm up in the sun and cool down in the breeze — like a built-in blanket and fan!',
       explanationNarration: {
         locale: 'en-US',
-        script: 'The plates may have soaked up heat from the sun and released heat when Stegosaurus got too hot — like a built-in thermostat!',
+        script: 'The plates helped Stegosaurus warm up in the sun and cool down in the breeze — like a built-in blanket and fan!',
       },
     },
     {
       id: 'stegosaurus-q3',
       topicId: 'topic-dinosaurs',
-      question: 'How big was the brain of a Stegosaurus?',
-      narration: { locale: 'en-US', script: 'How big was the brain of a Stegosaurus?' },
+      question: "How big was Stegosaurus's brain?",
+      narration: { locale: 'en-US', script: "How big was Stegosaurus's brain?" },
       options: [
         { id: 'a', label: 'As big as a walnut' },
         { id: 'b', label: 'As big as a football' },
@@ -330,10 +333,10 @@ export const DINO_QUIZ_MAP: Record<string, QuizQuestion[]> = {
       ],
       correctOptionId: 'a',
       explanation:
-        'Despite being as long as a school bus, Stegosaurus had a tiny brain — about the size of a walnut! Small but it did the job.',
+        'Only as big as a walnut — in a body the size of a school bus! But it was just the right brain for a Stegosaurus.',
       explanationNarration: {
         locale: 'en-US',
-        script: 'Despite being as long as a school bus, Stegosaurus had a tiny brain — about the size of a walnut! Small but it did the job.',
+        script: 'Only as big as a walnut — in a body the size of a school bus! But it was just the right brain for a Stegosaurus.',
       },
     },
   ],
@@ -351,10 +354,10 @@ export const DINO_QUIZ_MAP: Record<string, QuizQuestion[]> = {
       ],
       correctOptionId: 'a',
       explanation:
-        'Real Velociraptors were only about the size of a large turkey — much smaller than they look in the movies!',
+        'Real Velociraptors were only about the size of a turkey — much smaller than the ones in movies. Surprise!',
       explanationNarration: {
         locale: 'en-US',
-        script: 'Real Velociraptors were only about the size of a large turkey — much smaller than they look in the movies!',
+        script: 'Real Velociraptors were only about the size of a turkey — much smaller than the ones in movies. Surprise!',
       },
     },
     {
@@ -369,10 +372,10 @@ export const DINO_QUIZ_MAP: Record<string, QuizQuestion[]> = {
       ],
       correctOptionId: 'b',
       explanation:
-        'Real Velociraptors had feathers! They are closely related to modern birds — so a chicken is actually a tiny cousin of Velociraptor!',
+        'Feathers, just like a bird! In fact, birds today are related to dinosaurs like Velociraptor.',
       explanationNarration: {
         locale: 'en-US',
-        script: 'Real Velociraptors had feathers! They are closely related to modern birds — so a chicken is actually a tiny cousin of Velociraptor!',
+        script: 'Feathers, just like a bird! In fact, birds today are related to dinosaurs like Velociraptor.',
       },
     },
     {
@@ -383,14 +386,14 @@ export const DINO_QUIZ_MAP: Record<string, QuizQuestion[]> = {
       options: [
         { id: 'a', label: 'Webbed feet for swimming' },
         { id: 'b', label: 'Hooves like a horse' },
-        { id: 'c', label: 'A large curved claw for hunting' },
+        { id: 'c', label: 'A big curved claw' },
       ],
       correctOptionId: 'c',
       explanation:
-        'Velociraptor had a special sickle-shaped claw on each foot that it kept raised off the ground and used like a dagger to catch prey!',
+        'Each foot had one big curved claw that it held up off the ground to keep it sharp — like a special tool!',
       explanationNarration: {
         locale: 'en-US',
-        script: 'Velociraptor had a special sickle-shaped claw on each foot that it kept raised off the ground and used like a dagger to catch prey!',
+        script: 'Each foot had one big curved claw that it held up off the ground to keep it sharp — like a special tool!',
       },
     },
   ],
@@ -399,8 +402,8 @@ export const DINO_QUIZ_MAP: Record<string, QuizQuestion[]> = {
     {
       id: 'brachiosaurus-q1',
       topicId: 'topic-dinosaurs',
-      question: 'What was Brachiosaurus most famous for?',
-      narration: { locale: 'en-US', script: 'What was Brachiosaurus most famous for?' },
+      question: 'What is Brachiosaurus famous for?',
+      narration: { locale: 'en-US', script: 'What is Brachiosaurus famous for?' },
       options: [
         { id: 'a', label: 'Its enormous teeth' },
         { id: 'b', label: 'Its incredibly long neck' },
@@ -408,10 +411,10 @@ export const DINO_QUIZ_MAP: Record<string, QuizQuestion[]> = {
       ],
       correctOptionId: 'b',
       explanation:
-        'Brachiosaurus had a neck so long it could reach leaves at the very tops of tall trees — like the ultimate giraffe!',
+        'Its amazing long neck! It could reach leaves at the tops of the tallest trees, where no other dinosaur could reach.',
       explanationNarration: {
         locale: 'en-US',
-        script: 'Brachiosaurus had a neck so long it could reach leaves at the very tops of tall trees — like the ultimate giraffe!',
+        script: 'Its amazing long neck! It could reach leaves at the tops of the tallest trees, where no other dinosaur could reach.',
       },
     },
     {
@@ -426,28 +429,28 @@ export const DINO_QUIZ_MAP: Record<string, QuizQuestion[]> = {
       ],
       correctOptionId: 'c',
       explanation:
-        'Brachiosaurus used its amazing long neck to reach treetop leaves that no other dinosaur could get to!',
+        'Leaves from the very tops of the trees! Its long neck worked like a crane to reach the freshest leaves.',
       explanationNarration: {
         locale: 'en-US',
-        script: 'Brachiosaurus used its amazing long neck to reach treetop leaves that no other dinosaur could get to!',
+        script: 'Leaves from the very tops of the trees! Its long neck worked like a crane to reach the freshest leaves.',
       },
     },
     {
       id: 'brachiosaurus-q3',
       topicId: 'topic-dinosaurs',
-      question: 'How much did Brachiosaurus eat in a single day?',
-      narration: { locale: 'en-US', script: 'How much did Brachiosaurus eat in a single day?' },
+      question: 'How much did it eat in one day?',
+      narration: { locale: 'en-US', script: 'How much did it eat in one day?' },
       options: [
         { id: 'a', label: 'About the same as you' },
         { id: 'b', label: 'About 400 kilograms of plants' },
-        { id: 'c', label: 'Nothing — it stored energy like a cactus' },
+        { id: 'c', label: 'Nothing at all' },
       ],
       correctOptionId: 'b',
       explanation:
-        'Brachiosaurus needed to munch through roughly 400 kilograms of plants every single day just to stay full — that is like eating a whole car full of salad!',
+        'About 400 kilograms of plants every single day — that\'s like eating a whole car full of salad!',
       explanationNarration: {
         locale: 'en-US',
-        script: 'Brachiosaurus needed to munch through roughly 400 kilograms of plants every single day just to stay full — that is like eating a whole car full of salad!',
+        script: 'About 400 kilograms of plants every single day — that\'s like eating a whole car full of salad!',
       },
     },
   ],
@@ -456,44 +459,44 @@ export const DINO_QUIZ_MAP: Record<string, QuizQuestion[]> = {
     {
       id: 'spinosaurus-q1',
       topicId: 'topic-dinosaurs',
-      question: 'Which dinosaur was bigger — T. Rex or Spinosaurus?',
-      narration: { locale: 'en-US', script: 'Which dinosaur was bigger — T. Rex or Spinosaurus?' },
+      question: 'Which was bigger — T-Rex or Spinosaurus?',
+      narration: { locale: 'en-US', script: 'Which was bigger — T-Rex or Spinosaurus?' },
       options: [
-        { id: 'a', label: 'T. Rex was much bigger' },
+        { id: 'a', label: 'T-Rex was much bigger' },
         { id: 'b', label: 'They were exactly the same size' },
         { id: 'c', label: 'Spinosaurus was bigger!' },
       ],
       correctOptionId: 'c',
-      explanation: 'Spinosaurus is the largest meat-eating dinosaur ever found — even bigger than T. Rex!',
-      explanationNarration: { locale: 'en-US', script: 'Spinosaurus is the largest meat-eating dinosaur ever found — even bigger than T. Rex!' },
+      explanation: 'Spinosaurus was even bigger than T-Rex — the biggest meat-eating dinosaur ever discovered!',
+      explanationNarration: { locale: 'en-US', script: 'Spinosaurus was even bigger than T-Rex — the biggest meat-eating dinosaur ever discovered!' },
     },
     {
       id: 'spinosaurus-q2',
       topicId: 'topic-dinosaurs',
-      question: "What was the tall structure on Spinosaurus's back?",
-      narration: { locale: 'en-US', script: "What was the tall structure on Spinosaurus's back?" },
+      question: "What was on Spinosaurus's back?",
+      narration: { locale: 'en-US', script: "What was on Spinosaurus's back?" },
       options: [
         { id: 'a', label: 'A shell like a turtle' },
-        { id: 'b', label: 'A sail made of long spines' },
+        { id: 'b', label: 'A tall sail' },
         { id: 'c', label: 'Feathers for flying' },
       ],
       correctOptionId: 'b',
-      explanation: 'Spinosaurus had a giant sail on its back made of long spines — it may have helped it stay cool or impress other dinosaurs!',
-      explanationNarration: { locale: 'en-US', script: 'Spinosaurus had a giant sail on its back made of long spines — it may have helped it stay cool or impress other dinosaurs!' },
+      explanation: 'A tall sail made of long spines! Scientists think it may have helped Spinosaurus stay cool and show off.',
+      explanationNarration: { locale: 'en-US', script: 'A tall sail made of long spines! Scientists think it may have helped Spinosaurus stay cool and show off.' },
     },
     {
       id: 'spinosaurus-q3',
       topicId: 'topic-dinosaurs',
-      question: 'What did Spinosaurus mostly eat?',
-      narration: { locale: 'en-US', script: 'What did Spinosaurus mostly eat?' },
+      question: 'What did Spinosaurus eat?',
+      narration: { locale: 'en-US', script: 'What did Spinosaurus eat?' },
       options: [
         { id: 'a', label: 'Plants and berries' },
         { id: 'b', label: 'Other dinosaurs' },
         { id: 'c', label: 'Fish from rivers' },
       ],
       correctOptionId: 'c',
-      explanation: 'Spinosaurus was an expert fisher! Its long crocodile-like snout was perfect for snatching fish from rivers.',
-      explanationNarration: { locale: 'en-US', script: 'Spinosaurus was an expert fisher! Its long crocodile-like snout was perfect for snatching fish from rivers.' },
+      explanation: 'Big fish from the river! Spinosaurus was a champion fisher with a long snout like a crocodile.',
+      explanationNarration: { locale: 'en-US', script: 'Big fish from the river! Spinosaurus was a champion fisher with a long snout like a crocodile.' },
     },
   ],
 
@@ -504,27 +507,27 @@ export const DINO_QUIZ_MAP: Record<string, QuizQuestion[]> = {
       question: "What covered Ankylosaurus's back?",
       narration: { locale: 'en-US', script: "What covered Ankylosaurus's back?" },
       options: [
-        { id: 'a', label: 'Thick bony armour' },
+        { id: 'a', label: 'Thick bony armor' },
         { id: 'b', label: 'Feathers' },
         { id: 'c', label: 'Scales like a fish' },
       ],
       correctOptionId: 'a',
-      explanation: "Ankylosaurus was like a living tank — its back was covered in thick bony armour to protect it from predators!",
-      explanationNarration: { locale: 'en-US', script: "Ankylosaurus was like a living tank — its back was covered in thick bony armour to protect it from predators!" },
+      explanation: 'Thick, bumpy armor made of bone — like a knight\'s shield! Even hungry meat-eaters left Ankylosaurus alone.',
+      explanationNarration: { locale: 'en-US', script: 'Thick, bumpy armor made of bone — like a knight\'s shield! Even hungry meat-eaters left Ankylosaurus alone.' },
     },
     {
       id: 'ankylosaurus-q2',
       topicId: 'topic-dinosaurs',
-      question: "What weapon did Ankylosaurus have on its tail?",
-      narration: { locale: 'en-US', script: "What weapon did Ankylosaurus have on its tail?" },
+      question: 'What did Ankylosaurus have on its tail?',
+      narration: { locale: 'en-US', script: 'What did Ankylosaurus have on its tail?' },
       options: [
         { id: 'a', label: 'Sharp spikes' },
-        { id: 'b', label: 'A massive bony club' },
+        { id: 'b', label: 'A big round club' },
         { id: 'c', label: 'A whip-like tip' },
       ],
       correctOptionId: 'b',
-      explanation: 'The club on the end of its tail could swing hard enough to shatter bones — even T. Rex would avoid picking a fight!',
-      explanationNarration: { locale: 'en-US', script: 'The club on the end of its tail could swing hard enough to shatter bones — even T. Rex would avoid picking a fight!' },
+      explanation: 'A heavy club of solid bone! One good swing could protect it from even the biggest dinosaurs.',
+      explanationNarration: { locale: 'en-US', script: 'A heavy club of solid bone! One good swing could protect it from even the biggest dinosaurs.' },
     },
     {
       id: 'ankylosaurus-q3',
@@ -537,8 +540,8 @@ export const DINO_QUIZ_MAP: Record<string, QuizQuestion[]> = {
         { id: 'c', label: 'Plants' },
       ],
       correctOptionId: 'c',
-      explanation: 'Despite all that armour and weaponry, Ankylosaurus was actually a peaceful plant-eater!',
-      explanationNarration: { locale: 'en-US', script: 'Despite all that armour and weaponry, Ankylosaurus was actually a peaceful plant-eater!' },
+      explanation: 'Plants! Under all that tough armor, Ankylosaurus was a peaceful plant-eater.',
+      explanationNarration: { locale: 'en-US', script: 'Plants! Under all that tough armor, Ankylosaurus was a peaceful plant-eater.' },
     },
   ],
 
@@ -546,30 +549,30 @@ export const DINO_QUIZ_MAP: Record<string, QuizQuestion[]> = {
     {
       id: 'parasaurolophus-q1',
       topicId: 'topic-dinosaurs',
-      question: "What was the long hollow tube on Parasaurolophus's head used for?",
-      narration: { locale: 'en-US', script: "What was the long hollow tube on Parasaurolophus's head used for?" },
+      question: 'What was the long tube on its head for?',
+      narration: { locale: 'en-US', script: 'What was the long tube on its head for?' },
       options: [
         { id: 'a', label: 'Storing food' },
-        { id: 'b', label: 'Making sounds to communicate' },
-        { id: 'c', label: 'Sniffing out predators' },
+        { id: 'b', label: 'Making sounds to call its friends' },
+        { id: 'c', label: 'Sniffing out food' },
       ],
       correctOptionId: 'b',
-      explanation: 'The hollow tube worked like a musical instrument — Parasaurolophus could blow air through it to make a deep booming call!',
-      explanationNarration: { locale: 'en-US', script: 'The hollow tube worked like a musical instrument — Parasaurolophus could blow air through it to make a deep booming call!' },
+      explanation: 'Making sounds! The tube worked like a built-in trumpet, so Parasaurolophus could call to friends far away.',
+      explanationNarration: { locale: 'en-US', script: 'Making sounds! The tube worked like a built-in trumpet, so Parasaurolophus could call to friends far away.' },
     },
     {
       id: 'parasaurolophus-q2',
       topicId: 'topic-dinosaurs',
-      question: "What did Parasaurolophus's call sound like?",
-      narration: { locale: 'en-US', script: "What did Parasaurolophus's call sound like?" },
+      question: 'What did its call sound like?',
+      narration: { locale: 'en-US', script: 'What did its call sound like?' },
       options: [
-        { id: 'a', label: 'A high-pitched squeak' },
+        { id: 'a', label: 'A high squeak' },
         { id: 'b', label: 'Complete silence' },
-        { id: 'c', label: 'A deep booming sound like a trombone' },
+        { id: 'c', label: 'A deep booming sound' },
       ],
       correctOptionId: 'c',
-      explanation: 'Scientists built a model of the crest and played it — it made a low booming sound just like a trombone!',
-      explanationNarration: { locale: 'en-US', script: 'Scientists built a model of the crest and played it — it made a low booming sound just like a trombone!' },
+      explanation: 'A deep, booming sound, like a giant trombone. Try making your deepest, loudest HOOONK!',
+      explanationNarration: { locale: 'en-US', script: 'A deep, booming sound, like a giant trombone. Try making your deepest, loudest HOOONK!' },
     },
     {
       id: 'parasaurolophus-q3',
@@ -582,8 +585,8 @@ export const DINO_QUIZ_MAP: Record<string, QuizQuestion[]> = {
         { id: 'c', label: 'Fish' },
       ],
       correctOptionId: 'b',
-      explanation: 'Parasaurolophus was a herbivore — a plant eater! Its flat duck-like beak was great for snipping leaves.',
-      explanationNarration: { locale: 'en-US', script: 'Parasaurolophus was a herbivore — a plant eater! Its flat duck-like beak was great for snipping leaves.' },
+      explanation: 'Plants! Its wide, flat beak was perfect for snipping leaves and pine needles.',
+      explanationNarration: { locale: 'en-US', script: 'Plants! Its wide, flat beak was perfect for snipping leaves and pine needles.' },
     },
   ],
 
@@ -591,44 +594,44 @@ export const DINO_QUIZ_MAP: Record<string, QuizQuestion[]> = {
     {
       id: 'pachycephalosaurus-q1',
       topicId: 'topic-dinosaurs',
-      question: "What was special about Pachycephalosaurus's skull?",
-      narration: { locale: 'en-US', script: "What was special about Pachycephalosaurus's skull?" },
+      question: 'What was special about its head?',
+      narration: { locale: 'en-US', script: 'What was special about its head?' },
       options: [
         { id: 'a', label: 'It had three long horns' },
-        { id: 'b', label: 'It had a super-thick dome of solid bone' },
+        { id: 'b', label: 'A super thick bony dome' },
         { id: 'c', label: 'It was shaped like a sail' },
       ],
       correctOptionId: 'b',
-      explanation: 'The dome on its head was made of solid bone up to 25 centimetres thick — that is almost as thick as your arm is long!',
-      explanationNarration: { locale: 'en-US', script: 'The dome on its head was made of solid bone up to 25 centimetres thick — that is almost as thick as your arm is long!' },
+      explanation: 'A thick bony dome on top of its skull — almost ten times thicker than the top of your head!',
+      explanationNarration: { locale: 'en-US', script: 'A thick bony dome on top of its skull — almost ten times thicker than the top of your head!' },
     },
     {
       id: 'pachycephalosaurus-q2',
       topicId: 'topic-dinosaurs',
-      question: 'Why did Pachycephalosaurus headbutt rivals?',
-      narration: { locale: 'en-US', script: 'Why did Pachycephalosaurus headbutt rivals?' },
+      question: 'Why did it bonk heads with friends?',
+      narration: { locale: 'en-US', script: 'Why did it bonk heads with friends?' },
       options: [
         { id: 'a', label: 'To scare away predators' },
         { id: 'b', label: 'To find food underground' },
-        { id: 'c', label: 'To compete for mates, like bighorn sheep today' },
+        { id: 'c', label: "To see who was strongest" },
       ],
       correctOptionId: 'c',
-      explanation: 'Just like bighorn sheep crash their horns together today, Pachycephalosaurus would headbutt rivals to show who was strongest!',
-      explanationNarration: { locale: 'en-US', script: 'Just like bighorn sheep crash their horns together today, Pachycephalosaurus would headbutt rivals to show who was strongest!' },
+      explanation: 'To see who was strongest — just like bighorn sheep do today! Its thick dome kept its brain safe.',
+      explanationNarration: { locale: 'en-US', script: 'To see who was strongest — just like bighorn sheep do today! Its thick dome kept its brain safe.' },
     },
     {
       id: 'pachycephalosaurus-q3',
       topicId: 'topic-dinosaurs',
-      question: 'What does the name "Pachycephalosaurus" mean?',
-      narration: { locale: 'en-US', script: 'What does the name Pachycephalosaurus mean?' },
+      question: 'What does its name mean?',
+      narration: { locale: 'en-US', script: 'What does its name mean?' },
       options: [
         { id: 'a', label: 'Fast running lizard' },
         { id: 'b', label: 'Thick-headed lizard' },
-        { id: 'c', label: 'Armoured lizard' },
+        { id: 'c', label: 'Armored lizard' },
       ],
       correctOptionId: 'b',
-      explanation: '"Pachy" means thick, "cephalo" means head — so Pachycephalosaurus literally means thick-headed lizard!',
-      explanationNarration: { locale: 'en-US', script: '"Pachy" means thick, "cephalo" means head — so Pachycephalosaurus literally means thick-headed lizard!' },
+      explanation: 'Thick-headed lizard! Scientists gave it that name because of its amazing bony dome.',
+      explanationNarration: { locale: 'en-US', script: 'Thick-headed lizard! Scientists gave it that name because of its amazing bony dome.' },
     },
   ],
 
@@ -636,16 +639,16 @@ export const DINO_QUIZ_MAP: Record<string, QuizQuestion[]> = {
     {
       id: 'diplodocus-q1',
       topicId: 'topic-dinosaurs',
-      question: "What could Diplodocus do with its enormous tail?",
-      narration: { locale: 'en-US', script: "What could Diplodocus do with its enormous tail?" },
+      question: 'What could Diplodocus do with its long tail?',
+      narration: { locale: 'en-US', script: 'What could Diplodocus do with its long tail?' },
       options: [
         { id: 'a', label: 'Sting like a scorpion' },
-        { id: 'b', label: 'Crack it like a whip to make a sonic boom' },
+        { id: 'b', label: 'Crack it like a big whip' },
         { id: 'c', label: 'Hold onto tree branches' },
       ],
       correctOptionId: 'b',
-      explanation: "Diplodocus's tail was up to 14 metres long and scientists think it cracked like a whip — making a boom louder than a thunderclap!",
-      explanationNarration: { locale: 'en-US', script: "Diplodocus's tail was up to 14 metres long and scientists think it cracked like a whip — making a boom louder than a thunderclap!" },
+      explanation: 'It could crack its tail like a giant whip — scientists think it made a sound as loud as thunder!',
+      explanationNarration: { locale: 'en-US', script: 'It could crack its tail like a giant whip — scientists think it made a sound as loud as thunder!' },
     },
     {
       id: 'diplodocus-q2',
@@ -658,8 +661,8 @@ export const DINO_QUIZ_MAP: Record<string, QuizQuestion[]> = {
         { id: 'c', label: 'Plants' },
       ],
       correctOptionId: 'c',
-      explanation: 'Despite being enormous, Diplodocus was a gentle giant that only ate plants — it needed to munch all day to fuel that huge body!',
-      explanationNarration: { locale: 'en-US', script: 'Despite being enormous, Diplodocus was a gentle giant that only ate plants — it needed to munch all day to fuel that huge body!' },
+      explanation: 'Plants, from morning to night! Diplodocus was a gentle giant with a very big appetite.',
+      explanationNarration: { locale: 'en-US', script: 'Plants, from morning to night! Diplodocus was a gentle giant with a very big appetite.' },
     },
     {
       id: 'diplodocus-q3',
@@ -667,13 +670,13 @@ export const DINO_QUIZ_MAP: Record<string, QuizQuestion[]> = {
       question: 'How is Diplodocus different from Brachiosaurus?',
       narration: { locale: 'en-US', script: 'How is Diplodocus different from Brachiosaurus?' },
       options: [
-        { id: 'a', label: 'Diplodocus was much longer but held its neck lower' },
+        { id: 'a', label: 'Diplodocus was longer and held its neck low' },
         { id: 'b', label: 'Diplodocus was much shorter' },
         { id: 'c', label: 'They looked exactly the same' },
       ],
       correctOptionId: 'a',
-      explanation: 'Diplodocus was even longer than Brachiosaurus but held its neck out horizontally rather than reaching up — like two different kinds of giant!',
-      explanationNarration: { locale: 'en-US', script: 'Diplodocus was even longer than Brachiosaurus but held its neck out horizontally rather than reaching up — like two different kinds of giant!' },
+      explanation: 'Diplodocus was even longer, and it held its neck out low like a bridge. Two very different giants!',
+      explanationNarration: { locale: 'en-US', script: 'Diplodocus was even longer, and it held its neck out low like a bridge. Two very different giants!' },
     },
   ],
 
@@ -690,28 +693,28 @@ export const DINO_QUIZ_MAP: Record<string, QuizQuestion[]> = {
       ],
       correctOptionId: 'b',
       explanation:
-        'Coelophysis is one of the oldest known dinosaurs, living over 228 million years ago during the Triassic period — long before T. Rex!',
+        'About 228 million years ago — one of the very first dinosaurs, long before T-Rex was even born!',
       explanationNarration: {
         locale: 'en-US',
-        script: 'Coelophysis is one of the oldest known dinosaurs, living over 228 million years ago during the Triassic period — long before T. Rex!',
+        script: 'About 228 million years ago — one of the very first dinosaurs, long before T-Rex was even born!',
       },
     },
     {
       id: 'coelophysis-q2',
       topicId: 'topic-dinosaurs',
-      question: 'How big was a Coelophysis?',
-      narration: { locale: 'en-US', script: 'How big was a Coelophysis?' },
+      question: 'How big was Coelophysis?',
+      narration: { locale: 'en-US', script: 'How big was Coelophysis?' },
       options: [
-        { id: 'a', label: 'As big as a T. Rex' },
+        { id: 'a', label: 'As big as a T-Rex' },
         { id: 'b', label: 'As big as a school bus' },
-        { id: 'c', label: 'About the size of a large dog' },
+        { id: 'c', label: 'About the size of a big dog' },
       ],
       correctOptionId: 'c',
       explanation:
-        'Coelophysis was small and lightweight — only about the size of a large dog! Its light hollow bones made it very fast.',
+        'About the size of a big dog — small, light, and built for speed!',
       explanationNarration: {
         locale: 'en-US',
-        script: 'Coelophysis was small and lightweight — only about the size of a large dog! Its light hollow bones made it very fast.',
+        script: 'About the size of a big dog — small, light, and built for speed!',
       },
     },
     {
@@ -721,15 +724,15 @@ export const DINO_QUIZ_MAP: Record<string, QuizQuestion[]> = {
       narration: { locale: 'en-US', script: 'What did Coelophysis eat?' },
       options: [
         { id: 'a', label: 'Plants and leaves' },
-        { id: 'b', label: 'Small animals like lizards and insects' },
+        { id: 'b', label: 'Small animals like lizards and bugs' },
         { id: 'c', label: 'Fish from the ocean' },
       ],
       correctOptionId: 'b',
       explanation:
-        'Coelophysis was a carnivore — a meat eater! Its sharp teeth were perfect for snapping up small lizards and insects.',
+        'Little lizards and bugs! Coelophysis was quick — it could snap up its dinner before it got away.',
       explanationNarration: {
         locale: 'en-US',
-        script: 'Coelophysis was a carnivore — a meat eater! Its sharp teeth were perfect for snapping up small lizards and insects.',
+        script: 'Little lizards and bugs! Coelophysis was quick — it could snap up its dinner before it got away.',
       },
     },
   ],
@@ -738,112 +741,55 @@ export const DINO_QUIZ_MAP: Record<string, QuizQuestion[]> = {
     {
       id: 'plateosaurus-q1',
       topicId: 'topic-dinosaurs',
-      question: 'What could Plateosaurus do with its legs that was special?',
-      narration: { locale: 'en-US', script: 'What could Plateosaurus do with its legs that was special?' },
+      question: "What could Plateosaurus's legs do?",
+      narration: { locale: 'en-US', script: "What could Plateosaurus's legs do?" },
       options: [
-        { id: 'a', label: 'It could only walk on four legs' },
-        { id: 'b', label: 'It could walk on two legs OR four legs' },
-        { id: 'c', label: 'It could only hop like a kangaroo' },
+        { id: 'a', label: 'Only walk on four legs' },
+        { id: 'b', label: 'Walk on two legs or four legs' },
+        { id: 'c', label: 'Only hop like a kangaroo' },
       ],
       correctOptionId: 'b',
       explanation:
-        'Plateosaurus could switch between walking on two legs and four legs — very handy for reaching high leaves or moving quickly!',
+        'Both! It walked on four legs, then stood up on two to reach the tastiest leaves up high. What a clever trick!',
       explanationNarration: {
         locale: 'en-US',
-        script: 'Plateosaurus could switch between walking on two legs and four legs — very handy for reaching high leaves or moving quickly!',
+        script: 'Both! It walked on four legs, then stood up on two to reach the tastiest leaves up high. What a clever trick!',
       },
     },
     {
       id: 'plateosaurus-q2',
       topicId: 'topic-dinosaurs',
-      question: 'Was Plateosaurus a meat-eater or a plant-eater?',
-      narration: { locale: 'en-US', script: 'Was Plateosaurus a meat-eater or a plant-eater?' },
+      question: 'Did Plateosaurus eat meat or plants?',
+      narration: { locale: 'en-US', script: 'Did Plateosaurus eat meat or plants?' },
       options: [
-        { id: 'a', label: 'A meat-eater' },
-        { id: 'b', label: 'A plant-eater' },
-        { id: 'c', label: 'It ate both plants and meat' },
+        { id: 'a', label: 'Meat' },
+        { id: 'b', label: 'Plants' },
+        { id: 'c', label: 'Both plants and meat' },
       ],
       correctOptionId: 'b',
       explanation:
-        'Plateosaurus was a herbivore — a plant-eater! Its long neck helped it reach leaves in tall trees that smaller dinosaurs could not touch.',
+        'Plants! Its long neck helped it reach leaves that other dinosaurs couldn\'t.',
       explanationNarration: {
         locale: 'en-US',
-        script: 'Plateosaurus was a herbivore — a plant-eater! Its long neck helped it reach leaves in tall trees that smaller dinosaurs could not touch.',
+        script: "Plants! Its long neck helped it reach leaves that other dinosaurs couldn't.",
       },
     },
     {
       id: 'plateosaurus-q3',
       topicId: 'topic-dinosaurs',
-      question: 'What does the name "Plateosaurus" mean?',
+      question: 'What does the name Plateosaurus mean?',
       narration: { locale: 'en-US', script: 'What does the name Plateosaurus mean?' },
       options: [
         { id: 'a', label: 'Fast lizard' },
-        { id: 'b', label: 'Armoured lizard' },
+        { id: 'b', label: 'Armored lizard' },
         { id: 'c', label: 'Broad lizard' },
       ],
       correctOptionId: 'c',
       explanation:
-        '"Plateo" means broad or flat — so Plateosaurus means "broad lizard." Scientists named it this because of its wide, flat teeth, perfect for chomping plants!',
+        'Broad lizard! Its wide, flat teeth were just right for grinding up plants.',
       explanationNarration: {
         locale: 'en-US',
-        script: '"Plateo" means broad or flat — so Plateosaurus means "broad lizard." Scientists named it this because of its wide, flat teeth, perfect for chomping plants!',
-      },
-    },
-  ],
-
-  'pteranodon': [
-    {
-      id: 'pteranodon-q1',
-      topicId: 'topic-dinosaurs',
-      question: 'Was Pteranodon actually a dinosaur?',
-      narration: { locale: 'en-US', script: 'Was Pteranodon actually a dinosaur?' },
-      options: [
-        { id: 'a', label: 'Yes, it was a flying dinosaur' },
-        { id: 'b', label: 'No, it was a flying reptile called a pterosaur' },
-        { id: 'c', label: 'No, it was a giant bird' },
-      ],
-      correctOptionId: 'b',
-      explanation:
-        'Pteranodon was a pterosaur — a flying reptile that lived at the same time as dinosaurs but was not actually one!',
-      explanationNarration: {
-        locale: 'en-US',
-        script: 'Pteranodon was a pterosaur — a flying reptile that lived at the same time as dinosaurs but was not actually one!',
-      },
-    },
-    {
-      id: 'pteranodon-q2',
-      topicId: 'topic-dinosaurs',
-      question: "What were Pteranodon's wings made of?",
-      narration: { locale: 'en-US', script: "What were Pteranodon's wings made of?" },
-      options: [
-        { id: 'a', label: 'Feathers like a bird' },
-        { id: 'b', label: 'Scales like a fish' },
-        { id: 'c', label: 'Skin stretched over a very long finger' },
-      ],
-      correctOptionId: 'c',
-      explanation:
-        "Pteranodon's wings were made of thin stretchy skin attached to an extra-long finger on each hand — like a natural hang glider!",
-      explanationNarration: {
-        locale: 'en-US',
-        script: "Pteranodon's wings were made of thin stretchy skin attached to an extra-long finger on each hand — like a natural hang glider!",
-      },
-    },
-    {
-      id: 'pteranodon-q3',
-      topicId: 'topic-dinosaurs',
-      question: 'What did Pteranodon eat?',
-      narration: { locale: 'en-US', script: 'What did Pteranodon eat?' },
-      options: [
-        { id: 'a', label: 'Plants and berries' },
-        { id: 'b', label: 'Other flying reptiles' },
-        { id: 'c', label: 'Fish it snatched from the sea' },
-      ],
-      correctOptionId: 'c',
-      explanation:
-        'Pteranodon soared over ancient oceans and swooped down to snatch fish — just like a pelican does today!',
-      explanationNarration: {
-        locale: 'en-US',
-        script: 'Pteranodon soared over ancient oceans and swooped down to snatch fish — just like a pelican does today!',
+        script: 'Broad lizard! Its wide, flat teeth were just right for grinding up plants.',
       },
     },
   ],

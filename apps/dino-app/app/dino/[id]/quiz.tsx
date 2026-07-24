@@ -76,10 +76,10 @@ function OptionButton({
 
 function scoreMessage(score: number, total: number): string {
   const pct = score / total;
-  if (pct === 1) return 'Amazing! You are a dino expert!';
-  if (pct >= 0.67) return 'Great job! You really know your dinosaurs!';
-  if (pct >= 0.34) return 'Good try! Keep exploring to learn more!';
-  return 'Keep reading and try again — you will get there!';
+  if (pct === 1) return "Perfect score! You're a true dinosaur expert!";
+  if (pct >= 0.67) return 'Great job — you really know your dinosaurs!';
+  if (pct >= 0.34) return 'Good try! Explore a little more and play again.';
+  return "Nice try! Every explorer keeps learning — let's play again soon.";
 }
 
 function ResultsScreen({
@@ -113,7 +113,7 @@ function ResultsScreen({
           accessibilityRole="button"
           accessibilityLabel="Try the quiz again"
         >
-          <Text style={styles.resultBtnText}>Try Again</Text>
+          <Text style={styles.resultBtnText}>Play Again</Text>
         </Pressable>
         <Pressable
           onPress={onBack}
@@ -170,7 +170,7 @@ export default function QuizScreen() {
 
     const prefix = isCorrect
       ? "That's right! "
-      : `Not quite! The right answer was ${correctLabel}. `;
+      : `Good try! The answer was ${correctLabel}. `;
 
     speak(prefix + explanation, {
       pitch: isCorrect ? 1.25 : 0.88,
@@ -213,7 +213,7 @@ export default function QuizScreen() {
     return (
       <View style={styles.notFound}>
         <Stack.Screen options={{ title: 'Quiz' }} />
-        <Text style={styles.notFoundText}>No quiz available yet!</Text>
+        <Text style={styles.notFoundText}>No quiz here yet!</Text>
       </View>
     );
   }
@@ -307,7 +307,7 @@ export default function QuizScreen() {
                 accessibilityRole="button"
                 accessibilityLabel={isLast ? 'See your results' : 'Next question'}
               >
-                <Text style={styles.nextButtonText}>{isLast ? 'See Results' : 'Next Question'}</Text>
+                <Text style={styles.nextButtonText}>{isLast ? 'See My Results!' : 'Next Question!'}</Text>
               </Pressable>
             ) : null}
           </>

@@ -93,7 +93,7 @@ function ProgressBanner({
     >
       <Text style={styles.bannerText}>
         {allQuizDone && allDigDone
-          ? 'All quizzes and digs done — dino expert! 🎉'
+          ? "You explored them all — you're a true dinosaur expert! 🎉"
           : `🧠 ${quizCount}/${total} quizzes · ⛏️ ${digCount}/${total} digs`}
       </Text>
       <View style={styles.bannerRows}>
@@ -142,7 +142,7 @@ export default function HomeScreen() {
         accessibilityLabel="Dino World home screen"
       >
         <Text style={styles.heading} accessibilityRole="header">
-          Pick a Dinosaur!
+          Which dinosaur should we explore today?
         </Text>
 
         <ProgressBanner progress={progress} completedDigs={completedDigs} />
