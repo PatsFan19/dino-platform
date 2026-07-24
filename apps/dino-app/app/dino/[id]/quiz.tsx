@@ -173,7 +173,7 @@ export default function QuizScreen() {
       : `Good try! The answer was ${correctLabel}. `;
 
     speak(prefix + explanation, {
-      pitch: isCorrect ? 1.25 : 0.88,
+      pitch: isCorrect ? 1.25 : 1.05, // stay warm and encouraging, even on a miss
     });
   }, [selected]);
 
