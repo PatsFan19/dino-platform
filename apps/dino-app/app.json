@@ -18,15 +18,16 @@
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.dinasour.dinoapp",
-      "buildNumber": "1"
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false
+      }
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#1A8C4E"
       },
-      "package": "com.dinasour.dinoapp",
-      "versionCode": 1
+      "package": "com.dinasour.dinoapp"
     },
     "web": {
       "bundler": "metro",
