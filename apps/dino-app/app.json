@@ -12,7 +12,9 @@
       "resizeMode": "contain",
       "backgroundColor": "#1A8C4E"
     },
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.dinasour.dinoapp",
@@ -50,6 +52,13 @@
     ],
     "experiments": {
       "typedRoutes": true
-    }
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "5c1e297d-e671-4ef3-b9b6-5abe430ba7d0"
+      }
+    },
+    "owner": "anglynn05"
   }
 }
