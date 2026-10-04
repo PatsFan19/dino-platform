@@ -4,22 +4,27 @@
     "slug": "dino-app",
     "version": "1.0.0",
     "orientation": "portrait",
+    "icon": "./assets/icon.png",
     "scheme": "dinoworld",
     "userInterfaceStyle": "light",
     "splash": {
+      "image": "./assets/splash-icon.png",
       "resizeMode": "contain",
-      "backgroundColor": "#FFFDF5"
+      "backgroundColor": "#1A8C4E"
     },
     "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.dinasour.dinoapp"
+      "bundleIdentifier": "com.dinasour.dinoapp",
+      "buildNumber": "1"
     },
     "android": {
       "adaptiveIcon": {
-        "backgroundColor": "#FFFDF5"
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#1A8C4E"
       },
-      "package": "com.dinasour.dinoapp"
+      "package": "com.dinasour.dinoapp",
+      "versionCode": 1
     },
     "web": {
       "bundler": "metro",
@@ -36,8 +41,10 @@
       [
         "expo-splash-screen",
         {
-          "backgroundColor": "#FFFDF5",
-          "resizeMode": "contain"
+          "image": "./assets/splash-icon.png",
+          "backgroundColor": "#1A8C4E",
+          "resizeMode": "contain",
+          "imageWidth": 200
         }
       ]
     ],
