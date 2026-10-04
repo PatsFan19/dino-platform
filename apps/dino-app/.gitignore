@@ -5,4 +5,7 @@
 /ios
 /android
 expo-env.d.ts
+
+# App Store Connect API key — never commit, each machine/CI provides its own
+/credentials/
 # @end expo-cli
