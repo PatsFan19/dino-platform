@@ -1,6 +1,6 @@
 {
-  "buildCommand": "cd ../.. && pnpm install && pnpm --filter website build",
+  "buildCommand": "cd ../.. && pnpm --filter website build",
   "outputDirectory": ".next",
   "framework": "nextjs",
-  "installCommand": "echo 'handled by buildCommand'"
+  "installCommand": "cd ../.. && pnpm install --config.node-linker=isolated --config.shamefully-hoist=false"
 }
