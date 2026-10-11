@@ -23,7 +23,8 @@
       "ios": {
         "ascApiKeyPath": "./credentials/AuthKey_2SRSFC69P5.p8",
         "ascApiKeyId": "2SRSFC69P5",
-        "ascApiKeyIssuerId": "4f945754-420b-4c4e-b842-34155e3aaa09"
+        "ascApiKeyIssuerId": "4f945754-420b-4c4e-b842-34155e3aaa09",
+        "ascAppId": "6821505246"
       }
     }
   }

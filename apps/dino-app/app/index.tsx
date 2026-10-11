@@ -135,11 +135,11 @@ export default function HomeScreen() {
 
   return (
     <>
-      <Stack.Screen options={{ title: 'Dino World' }} />
+      <Stack.Screen options={{ title: 'Dino Worlds' }} />
       <ScrollView
         style={styles.scroll}
         contentContainerStyle={styles.container}
-        accessibilityLabel="Dino World home screen"
+        accessibilityLabel="Dino Worlds home screen"
       >
         <Text style={styles.heading} accessibilityRole="header">
           Which dinosaur should we explore today?
